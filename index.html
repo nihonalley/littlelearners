@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,13 +22,7 @@
         </div>
       </div>
 
-      <button
-        class="sound-button"
-        id="soundButton"
-        type="button"
-        aria-label="Turn sound off"
-        title="Sound"
-      >
+      <button class="sound-button" id="soundButton" type="button" aria-label="Turn sound off" title="Sound">
         🔊
       </button>
     </header>
@@ -70,23 +65,19 @@
       </div>
 
       <div class="games-grid">
-        <a
-          class="game-card available"
-          href="games/find-the-color/index.html"
-          data-game="find-the-color"
-        >
+        <a class="game-card available" href="games/find-the-color/index.html" data-game="find-the-color">
           <div class="game-icon icon-colors" aria-hidden="true">🎨</div>
           <h3>Find the Color</h3>
           <p>Listen, look, and tap the right color.</p>
           <span class="game-status play">▶ Play</span>
         </a>
 
-        <div class="game-card locked">
+        <a class="game-card available" href="games/colored-objects/index.html" data-game="colored-objects">
           <div class="game-icon icon-object" aria-hidden="true">🎈</div>
           <h3>Colored Objects</h3>
           <p>Find familiar objects by their color.</p>
-          <span class="game-status soon">Coming soon</span>
-        </div>
+          <span class="game-status play">▶ Play</span>
+        </a>
 
         <div class="game-card locked">
           <div class="game-icon icon-shapes" aria-hidden="true">🔺</div>
@@ -160,4 +151,5 @@
 
   <script src="js/app.js"></script>
 </body>
+
 </html>
