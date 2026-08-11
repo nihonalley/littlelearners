@@ -2,51 +2,192 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta name="theme-color" content="#fff8ee" />
+
   <title>Find the Color | Little Learners</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      background: #fff8ee;
-      color: #263238;
-      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
-      text-align: center;
-    }
 
-    main {
-      max-width: 520px;
-    }
-
-    h1 {
-      margin-bottom: 12px;
-    }
-
-    p {
-      color: #78828a;
-      line-height: 1.6;
-    }
-
-    a {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 12px 18px;
-      border-radius: 14px;
-      background: #ffd65a;
-      color: #263238;
-      text-decoration: none;
-      font-weight: 800;
-    }
-  </style>
+  <link rel="stylesheet" href="game.css" />
 </head>
+
 <body>
-  <main>
-    <h1>🎨 Find the Color</h1>
-    <p>This game module is ready for us to build next.</p>
-    <a href="../../index.html">← Back to Home</a>
+
+  <main class="game-shell">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+      <a
+        href="../../index.html"
+        class="home-button"
+        aria-label="Go back home"
+      >
+        ←
+      </a>
+
+      <div class="game-title">
+        <span class="game-icon">🎨</span>
+
+        <div>
+          <h1>Find the Color</h1>
+          <p>Ages 2–4</p>
+        </div>
+      </div>
+
+      <button
+        id="soundButton"
+        class="sound-button"
+        type="button"
+        aria-label="Turn sound off"
+      >
+        🔊
+      </button>
+
+    </header>
+
+
+    <!-- START SCREEN -->
+    <section
+      id="startScreen"
+      class="screen start-screen"
+    >
+
+      <div class="start-icon">
+        🎨
+      </div>
+
+      <h2>
+        Ready to play?
+      </h2>
+
+      <p>
+        Listen carefully and tap the color you hear.
+      </p>
+
+      <button
+        id="startButton"
+        class="primary-button"
+        type="button"
+      >
+        Start Game
+      </button>
+
+    </section>
+
+
+    <!-- GAME SCREEN -->
+    <section
+      id="gameScreen"
+      class="screen game-screen hidden"
+    >
+
+      <div class="game-info">
+
+        <div
+          id="roundLabel"
+          class="round-label"
+        >
+          Round 1 of 8
+        </div>
+
+        <button
+          id="repeatButton"
+          class="repeat-button"
+          type="button"
+          aria-label="Repeat the question"
+        >
+          🔊 Hear Again
+        </button>
+
+      </div>
+
+
+      <div
+        id="feedback"
+        class="feedback"
+        aria-live="polite"
+      >
+      </div>
+
+
+      <div
+        id="colorChoices"
+        class="color-choices"
+        aria-label="Color choices"
+      >
+      </div>
+
+
+      <div class="progress-track">
+
+        <div
+          id="progressBar"
+          class="progress-bar"
+        >
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINISH SCREEN -->
+    <section
+      id="finishScreen"
+      class="screen finish-screen hidden"
+    >
+
+      <div class="celebration">
+        ⭐
+      </div>
+
+      <h2>
+        All done!
+      </h2>
+
+      <p>
+        Great job!
+      </p>
+
+      <div class="finish-buttons">
+
+        <button
+          id="playAgainButton"
+          class="primary-button"
+          type="button"
+        >
+          Play Again
+        </button>
+
+        <a
+          href="../../index.html"
+          class="secondary-button"
+        >
+          Home
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- SMALL CELEBRATION PARTICLES -->
+    <div
+      id="celebrationLayer"
+      class="celebration-layer"
+      aria-hidden="true"
+    >
+    </div>
+
   </main>
+
+
+  <script src="game.js"></script>
+
 </body>
 </html>
