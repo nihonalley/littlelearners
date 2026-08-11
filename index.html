@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff8ee" />
+  <title>Little Learners</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">✏️</div>
+
+        <div class="brand-copy">
+          <h1 class="brand-title">Little Learners</h1>
+          <p class="brand-subtitle">Play, learn, and explore.</p>
+        </div>
+      </div>
+
+      <button
+        class="sound-button"
+        id="soundButton"
+        type="button"
+        aria-label="Turn sound off"
+        title="Sound"
+      >
+        🔊
+      </button>
+    </header>
+
+    <section class="hero" aria-labelledby="welcome-title">
+      <div class="hero-content">
+        <div class="age-pill">🌟 Ages 2–4</div>
+
+        <h2 id="welcome-title">
+          What do you want to <span>learn today?</span>
+        </h2>
+
+        <p>Pick a game and have fun learning.</p>
+      </div>
+
+      <div class="classroom-art" aria-hidden="true">
+        <div class="board">
+          <div class="chalk-dot one"></div>
+          <div class="chalk-dot two"></div>
+          <div class="chalk-line"></div>
+
+          <div class="board-text">
+            A B C<br />
+            1 2 3
+          </div>
+        </div>
+
+        <div class="book-stack">
+          <div class="book"></div>
+          <div class="book"></div>
+          <div class="book"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="games-section" aria-labelledby="games-title">
+      <div class="section-heading">
+        <h2 id="games-title">Choose a Game</h2>
+        <p>Short activities made for little learners.</p>
+      </div>
+
+      <div class="games-grid">
+        <a
+          class="game-card available"
+          href="games/find-the-color/index.html"
+          data-game="find-the-color"
+        >
+          <div class="game-icon icon-colors" aria-hidden="true">🎨</div>
+          <h3>Find the Color</h3>
+          <p>Listen, look, and tap the right color.</p>
+          <span class="game-status play">▶ Play</span>
+        </a>
+
+        <div class="game-card locked">
+          <div class="game-icon icon-object" aria-hidden="true">🎈</div>
+          <h3>Colored Objects</h3>
+          <p>Find familiar objects by their color.</p>
+          <span class="game-status soon">Coming soon</span>
+        </div>
+
+        <div class="game-card locked">
+          <div class="game-icon icon-shapes" aria-hidden="true">🔺</div>
+          <h3>Shapes</h3>
+          <p>Learn circles, squares, triangles, and more.</p>
+          <span class="game-status soon">Coming soon</span>
+        </div>
+
+        <div class="game-card locked">
+          <div class="game-icon icon-numbers" aria-hidden="true">🔢</div>
+          <h3>Numbers</h3>
+          <p>Recognize numbers and practice counting.</p>
+          <span class="game-status soon">Coming soon</span>
+        </div>
+
+        <div class="game-card locked">
+          <div class="game-icon icon-letters" aria-hidden="true">🔤</div>
+          <h3>Letters</h3>
+          <p>Meet the letters from A to Z.</p>
+          <span class="game-status soon">Coming soon</span>
+        </div>
+
+        <div class="game-card locked">
+          <div class="game-icon icon-animals" aria-hidden="true">🐶</div>
+          <h3>Animals</h3>
+          <p>Discover animals and the sounds they make.</p>
+          <span class="game-status soon">Coming soon</span>
+        </div>
+
+        <div class="game-card locked">
+          <div class="game-icon icon-match" aria-hidden="true">🧩</div>
+          <h3>Matching</h3>
+          <p>Find pictures that belong together.</p>
+          <span class="game-status soon">Coming soon</span>
+        </div>
+
+        <div class="game-card locked">
+          <div class="game-icon icon-size" aria-hidden="true">🐘</div>
+          <h3>Big or Small</h3>
+          <p>Compare objects and learn about size.</p>
+          <span class="game-status soon">Coming soon</span>
+        </div>
+
+        <div class="game-card locked">
+          <div class="game-icon icon-patterns" aria-hidden="true">🟡</div>
+          <h3>Patterns</h3>
+          <p>Look carefully and complete the pattern.</p>
+          <span class="game-status soon">Coming soon</span>
+        </div>
+
+        <div class="game-card locked">
+          <div class="game-icon icon-memory" aria-hidden="true">🃏</div>
+          <h3>Memory Cards</h3>
+          <p>Turn cards over and find matching pairs.</p>
+          <span class="game-status soon">Coming soon</span>
+        </div>
+
+        <div class="game-card locked">
+          <div class="game-icon icon-sorting" aria-hidden="true">🧺</div>
+          <h3>Sorting</h3>
+          <p>Put colors, shapes, and objects into groups.</p>
+          <span class="game-status soon">Coming soon</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Made for happy little learning moments.
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
