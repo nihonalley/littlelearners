@@ -1,0 +1,150 @@
+<!-- START SCREEN -->
+
+<section
+  id="startScreen"
+  class="game-screen game-center-screen"
+>
+  <div
+    class="game-start-icon"
+    aria-hidden="true"
+  >
+    🫧
+  </div>
+
+  <h2>Bubble Pop</h2>
+
+  <p>
+    Choose what you want to practice.
+  </p>
+
+  <div class="bubble-mode-selector">
+
+    <button
+      id="colorModeButton"
+      class="game-mode-button is-active"
+      type="button"
+    >
+      🎨 Colors
+    </button>
+
+    <button
+      id="letterModeButton"
+      class="game-mode-button"
+      type="button"
+    >
+      🔤 Letters
+    </button>
+
+    <button
+      id="numberModeButton"
+      class="game-mode-button"
+      type="button"
+    >
+      🔢 Numbers
+    </button>
+
+  </div>
+
+  <button
+    id="startButton"
+    class="game-primary-button"
+    type="button"
+  >
+    Start Game
+  </button>
+</section>
+
+
+<!-- PLAY SCREEN -->
+
+<section
+  id="playScreen"
+  class="game-screen game-play-screen is-hidden"
+>
+  <div class="game-meta">
+
+    <span
+      id="roundLabel"
+      class="game-round-label"
+    >
+      Round 1 of 8
+    </span>
+
+    <button
+      id="repeatButton"
+      class="game-repeat-button"
+      type="button"
+    >
+      🔊 Hear Again
+    </button>
+
+  </div>
+
+
+  <h2
+    id="prompt"
+    class="game-prompt"
+  ></h2>
+
+
+  <div
+    id="feedback"
+    class="game-feedback"
+    aria-live="polite"
+  ></div>
+
+
+  <div
+    id="bubbleField"
+    class="bubble-field"
+    aria-label="Bubble choices"
+  ></div>
+
+
+  <div class="game-progress-track">
+    <div
+      id="progressBar"
+      class="game-progress-bar"
+    ></div>
+  </div>
+</section>
+
+
+<!-- FINISH SCREEN -->
+
+<section
+  id="finishScreen"
+  class="game-screen game-center-screen is-hidden"
+>
+  <div
+    class="game-finish-icon"
+    aria-hidden="true"
+  >
+    ⭐
+  </div>
+
+  <h2>All done!</h2>
+
+  <p>
+    Great job popping and learning!
+  </p>
+
+  <div class="game-finish-actions">
+
+    <button
+      id="playAgainButton"
+      class="game-primary-button"
+      type="button"
+    >
+      Play Again
+    </button>
+
+    <a
+      href="/"
+      class="game-secondary-button"
+    >
+      Home
+    </a>
+
+  </div>
+</section>

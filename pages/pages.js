@@ -128,7 +128,39 @@ const pages = {
             "Visual matching"
         ]
 
-    }
+    },
+    "bubble-pop": {
+
+  gameTitle:
+    "Bubble Pop",
+
+  icon:
+    "🫧",
+
+  ageRange:
+    "Ages 2–4",
+
+  seoTitle:
+    "Bubble Pop Learning Game for Toddlers | Little Learners",
+
+  seoDescription:
+    "A free interactive bubble popping learning game for toddlers and preschoolers ages 2–4. Practice colors, uppercase letters and numbers 1–10.",
+
+  parentHeading:
+    "Bubble Pop Learning Game for Toddlers",
+
+  parentDescription:
+    "Bubble Pop combines early learning with a simple tap-and-pop activity for toddlers and preschoolers ages 2–4. Children can practice colors, uppercase letters or numbers 1–10 while developing visual recognition, listening skills and hand-eye coordination.",
+
+  skills: [
+    "Color recognition",
+    "Letter recognition",
+    "Number recognition",
+    "Listening skills",
+    "Hand-eye coordination"
+  ]
+
+}
 
 };
 

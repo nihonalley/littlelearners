@@ -329,7 +329,8 @@ const MASTER_GAMES = [
     "find-the-color",
     "colored-objects",
     "find-the-letter",
-    "find-the-animal"
+    "find-the-animal",
+  "bubble-pop"
 ];
 
 

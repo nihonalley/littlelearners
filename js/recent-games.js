@@ -31,6 +31,12 @@
       title: "Find the Animal",
       icon: "🐶",
       url: "/games/find-the-animal/"
+    },
+    {
+      slug: "bubble-pop",
+      title: "Bubble Pop",
+      icon: "🫧",
+      url: "/games/bubble-pop/"
     }
   ];
 
@@ -77,8 +83,8 @@
 
     return (
       match
-      ? match[1]
-      : null
+        ? match[1]
+        : null
     );
   }
 
@@ -245,7 +251,7 @@
 
         if (
           game.slug !==
-            currentSlug &&
+          currentSlug &&
           !alreadyIncluded
         ) {
 

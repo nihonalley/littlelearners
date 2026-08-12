@@ -1420,3 +1420,239 @@ body.suggest-game-open {
   }
 
 }
+
+/* ========================================
+   BUBBLE POP
+======================================== */
+
+.bubble-mode-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin:
+    12px
+    0
+    22px;
+}
+
+
+.bubble-field {
+  position: relative;
+
+  flex: 1;
+
+  min-height: 390px;
+
+  overflow: hidden;
+
+  margin:
+    14px
+    0
+    28px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(225, 247, 255, 0.65),
+      rgba(255, 245, 251, 0.55)
+    );
+}
+
+
+.learning-bubble {
+  --size: 105px;
+
+  position: absolute;
+
+  width: var(--size);
+  height: var(--size);
+
+  display: grid;
+  place-items: center;
+
+  border:
+    3px solid
+    rgba(255,255,255,0.7);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255,255,255,0.95) 0 7%,
+      rgba(255,255,255,0.45) 8% 15%,
+      var(--bubble-color) 48%,
+      rgba(255,255,255,0.28) 100%
+    );
+
+  box-shadow:
+    inset -8px -10px 20px
+    rgba(90, 80, 130, 0.08),
+
+    0 8px 20px
+    rgba(80, 80, 110, 0.09);
+
+  color:
+    #293238;
+
+  font-family:
+    "Fredoka",
+    sans-serif;
+
+  font-size:
+    clamp(
+      2.4rem,
+      8vw,
+      4.4rem
+    );
+
+  font-weight:
+    700;
+
+  cursor: pointer;
+
+  touch-action: manipulation;
+
+  animation:
+    bubbleFloat
+    var(--bubble-speed)
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+.learning-bubble::after {
+  content: "";
+
+  position: absolute;
+
+  width: 21%;
+  height: 10%;
+
+  top: 17%;
+  left: 21%;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.68);
+
+  transform:
+    rotate(-25deg);
+
+  pointer-events: none;
+}
+
+
+.learning-bubble.is-popping {
+  pointer-events: none;
+
+  animation:
+    bubblePop
+    240ms
+    ease-out
+    forwards;
+}
+
+
+.learning-bubble.is-hint {
+  box-shadow:
+    0 0 0 10px
+    rgba(255, 214, 90, 0.33);
+
+  animation:
+    bubbleHint
+    850ms
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes bubbleFloat {
+
+  from {
+    transform:
+      translate(
+        -5px,
+        5px
+      );
+  }
+
+  to {
+    transform:
+      translate(
+        8px,
+        -20px
+      );
+  }
+
+}
+
+
+@keyframes bubblePop {
+
+  0% {
+    transform:
+      scale(1);
+
+    opacity: 1;
+  }
+
+  55% {
+    transform:
+      scale(1.28);
+
+    opacity: 0.7;
+  }
+
+  100% {
+    transform:
+      scale(0);
+
+    opacity: 0;
+  }
+
+}
+
+
+@keyframes bubbleHint {
+
+  0%,
+  100% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.10);
+  }
+
+}
+
+
+@media (max-width: 540px) {
+
+  .bubble-field {
+    min-height: 420px;
+  }
+
+
+  .learning-bubble {
+    --size: 88px;
+
+    font-size:
+      clamp(
+        2.2rem,
+        12vw,
+        3.4rem
+      );
+  }
+
+}
