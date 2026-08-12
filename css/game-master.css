@@ -1150,3 +1150,273 @@ button {
   }
 
 }
+
+/* ========================================
+   SUGGEST A GAME
+======================================== */
+
+.suggest-game-button {
+  position: fixed;
+
+  right: 20px;
+  bottom: 20px;
+
+  z-index: 900;
+
+  min-height: 50px;
+
+  padding:
+    12px
+    18px;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  background: #ffd65a;
+
+  color: #332d1e;
+
+  box-shadow:
+    0 10px 26px
+    rgba(70, 55, 30, 0.18);
+
+  font-family:
+    "Fredoka",
+    sans-serif;
+
+  font-size: 0.92rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.suggest-game-button:hover {
+  transform: translateY(-2px);
+}
+
+
+.suggest-game-overlay {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 2000;
+
+  padding: 18px;
+
+  background:
+    rgba(35, 42, 45, 0.42);
+
+  overflow-y: auto;
+}
+
+
+.suggest-game-overlay.is-open {
+  display: grid;
+
+  place-items: center;
+}
+
+
+.suggest-game-modal {
+  position: relative;
+
+  width:
+    min(
+      100%,
+      460px
+    );
+
+  padding:
+    28px;
+
+  background: #ffffff;
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 22px 55px
+    rgba(30, 30, 30, 0.18);
+}
+
+
+.suggest-game-close {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  width: 38px;
+  height: 38px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 22px;
+}
+
+
+.suggest-game-icon {
+  width: 62px;
+  height: 62px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 18px;
+
+  background: #fff1c5;
+
+  font-size: 30px;
+}
+
+
+.suggest-game-modal h2 {
+  margin:
+    0
+    0
+    8px;
+
+  font-size:
+    1.8rem;
+}
+
+
+.suggest-game-intro {
+  margin:
+    0
+    0
+    22px;
+
+  color:
+    var(--muted);
+
+  line-height: 1.5;
+}
+
+
+.suggest-game-modal form {
+  display: grid;
+
+  gap: 15px;
+}
+
+
+.suggest-game-modal label {
+  display: grid;
+
+  gap: 6px;
+
+  font-size:
+    0.88rem;
+
+  font-weight: 600;
+}
+
+
+.suggest-game-modal input,
+.suggest-game-modal select,
+.suggest-game-modal textarea {
+  width: 100%;
+
+  padding:
+    12px
+    13px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 13px;
+
+  background: #fffdf9;
+
+  color:
+    var(--text);
+
+  font-family:
+    "Fredoka",
+    sans-serif;
+
+  font-size:
+    0.95rem;
+
+  outline: none;
+}
+
+
+.suggest-game-modal textarea {
+  resize: vertical;
+}
+
+
+.suggest-game-modal input:focus,
+.suggest-game-modal select:focus,
+.suggest-game-modal textarea:focus {
+  border-color:
+    #d5b83f;
+}
+
+
+.suggest-game-submit {
+  min-height: 50px;
+
+  margin-top: 4px;
+
+  border: 0;
+
+  border-radius: 15px;
+
+  background:
+    #ffd65a;
+
+  color:
+    #332d1e;
+
+  font-weight:
+    700;
+
+  cursor: pointer;
+}
+
+
+body.suggest-game-open {
+  overflow: hidden;
+}
+
+
+@media (max-width: 540px) {
+
+  .suggest-game-button {
+    right: 12px;
+    bottom: 14px;
+
+    padding:
+      11px
+      14px;
+
+    font-size:
+      0.82rem;
+  }
+
+
+  .suggest-game-modal {
+    padding:
+      24px
+      18px;
+  }
+
+}
