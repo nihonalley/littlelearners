@@ -1,0 +1,120 @@
+<!-- START SCREEN -->
+
+<section
+  id="startScreen"
+  class="game-screen game-center-screen"
+>
+  <div
+    class="game-start-icon"
+    aria-hidden="true"
+  >
+    🎈
+  </div>
+
+  <h2>Ready to play?</h2>
+
+  <p>
+    Listen carefully and tap the right object.
+  </p>
+
+  <button
+    id="startButton"
+    class="game-primary-button"
+    type="button"
+  >
+    Start Game
+  </button>
+</section>
+
+
+<!-- PLAY SCREEN -->
+
+<section
+  id="playScreen"
+  class="game-screen game-play-screen is-hidden"
+>
+  <div class="game-meta">
+
+    <span
+      id="roundLabel"
+      class="game-round-label"
+    >
+      Round 1 of 8
+    </span>
+
+    <button
+      id="repeatButton"
+      class="game-repeat-button"
+      type="button"
+    >
+      🔊 Hear Again
+    </button>
+
+  </div>
+
+
+  <h2
+    id="prompt"
+    class="game-prompt"
+  ></h2>
+
+
+  <div
+    id="feedback"
+    class="game-feedback"
+    aria-live="polite"
+  ></div>
+
+
+  <div
+    id="objectChoices"
+    class="game-choices"
+    aria-label="Object choices"
+  ></div>
+
+
+  <div class="game-progress-track">
+    <div
+      id="progressBar"
+      class="game-progress-bar"
+    ></div>
+  </div>
+</section>
+
+
+<!-- FINISH SCREEN -->
+
+<section
+  id="finishScreen"
+  class="game-screen game-center-screen is-hidden"
+>
+  <div
+    class="game-finish-icon"
+    aria-hidden="true"
+  >
+    ⭐
+  </div>
+
+  <h2>All done!</h2>
+
+  <p>Great job!</p>
+
+  <div class="game-finish-actions">
+
+    <button
+      id="playAgainButton"
+      class="game-primary-button"
+      type="button"
+    >
+      Play Again
+    </button>
+
+    <a
+      href="../../index.html"
+      class="game-secondary-button"
+    >
+      Home
+    </a>
+
+  </div>
+</section>

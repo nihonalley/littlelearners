@@ -26,7 +26,12 @@ body {
     min-height: 100vh;
     background: radial-gradient(circle at 10% 10%, rgba(255, 214, 90, .12), transparent 24%), radial-gradient(circle at 90% 16%, rgba(105, 185, 238, .10), transparent 25%), var(--bg);
     color: var(--text);
-    font-family: "Trebuchet MS", "Avenir Next", "Segoe UI", Arial, sans-serif
+    font-family:
+        "Fredoka",
+        "Trebuchet MS",
+        "Segoe UI",
+        Arial,
+        sans-serif;
 }
 
 button,
@@ -572,5 +577,576 @@ button {
 
         font-size: 0.78rem;
     }
+
+}
+
+/* ========================================
+   PARENTS & TEACHERS
+======================================== */
+
+.parent-guide {
+    max-width: 760px;
+
+    margin:
+        40px auto 0;
+
+    padding:
+        30px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-lg);
+}
+
+
+.parent-guide-label {
+    margin:
+        0 0 10px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.08em;
+}
+
+
+.parent-guide h2 {
+    margin:
+        0 0 12px;
+
+    font-size:
+        clamp(1.35rem,
+            3vw,
+            1.8rem);
+
+    letter-spacing:
+        -0.03em;
+}
+
+
+.parent-guide h3 {
+    margin:
+        24px 0 10px;
+
+    font-size:
+        1rem;
+}
+
+
+.parent-guide p,
+.parent-guide li {
+    color:
+        var(--muted);
+
+    line-height:
+        1.7;
+
+    font-size:
+        0.94rem;
+}
+
+
+.parent-guide ul {
+    margin:
+        0;
+
+    padding-left:
+        22px;
+}
+
+
+.parent-guide li+li {
+    margin-top:
+        5px;
+}
+
+
+@media (max-width: 540px) {
+
+    .parent-guide {
+        margin-top:
+            24px;
+
+        padding:
+            22px 19px;
+    }
+
+}
+
+/* ========================================
+   LETTER GAME
+======================================== */
+
+.letter-choice {
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  color: #283238;
+
+  font-size:
+    clamp(
+      5.5rem,
+      14vw,
+      9rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  user-select:
+    none;
+}
+
+
+@media (max-width: 540px) {
+
+  .letter-choice {
+    font-size:
+      clamp(
+        5rem,
+        24vw,
+        7rem
+      );
+  }
+
+}
+
+/* ========================================
+   GAME LAYOUT + RECENT GAMES
+======================================== */
+
+.game-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    230px;
+
+  gap: 20px;
+
+  align-items: start;
+}
+
+
+.game-main-column {
+  min-width: 0;
+}
+
+
+/* ========================================
+   RECENT GAMES PANEL
+======================================== */
+
+.recent-games-panel {
+  position: sticky;
+
+  top: 18px;
+
+  padding: 18px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.88
+    );
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    0 10px 24px
+    rgba(
+      70,
+      58,
+      40,
+      0.07
+    );
+}
+
+
+.recent-games-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 14px;
+}
+
+
+.recent-games-label {
+  margin:
+    0
+    0
+    4px;
+
+  color:
+    var(--muted);
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    700;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.08em;
+}
+
+
+.recent-games-header h2 {
+  margin: 0;
+
+  font-size:
+    1.05rem;
+
+  line-height: 1.1;
+}
+
+
+.recent-games-close {
+  display: none;
+
+  width: 36px;
+  height: 36px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    12px;
+
+  background:
+    #ffffff;
+
+  color:
+    var(--text);
+
+  cursor: pointer;
+
+  font-size:
+    22px;
+
+  line-height: 1;
+}
+
+
+/* ========================================
+   RECENT GAME LINKS
+======================================== */
+
+.recent-games-list {
+  display: grid;
+
+  gap: 9px;
+}
+
+
+.recent-game-link {
+  display: grid;
+
+  grid-template-columns:
+    42px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    15px;
+
+  background:
+    #ffffff;
+
+  color:
+    var(--text);
+
+  text-decoration:
+    none;
+
+  transition:
+    transform 140ms ease,
+    background 140ms ease;
+}
+
+
+.recent-game-link:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    #fffaf0;
+}
+
+
+.recent-game-icon {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius:
+    13px;
+
+  background:
+    #fff1c5;
+
+  font-size:
+    22px;
+}
+
+
+.recent-game-copy {
+  min-width: 0;
+}
+
+
+.recent-game-title {
+  display: block;
+
+  font-size:
+    0.88rem;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.15;
+}
+
+
+.recent-game-status {
+  display: block;
+
+  margin-top: 3px;
+
+  color:
+    var(--muted);
+
+  font-size:
+    0.72rem;
+}
+
+
+.recent-games-home {
+  display: block;
+
+  margin-top: 13px;
+
+  padding-top: 12px;
+
+  border-top:
+    1px solid
+    var(--border);
+
+  color:
+    #36744e;
+
+  text-align: center;
+
+  text-decoration:
+    none;
+
+  font-size:
+    0.82rem;
+
+  font-weight:
+    700;
+}
+
+
+/* ========================================
+   MOBILE BUTTON
+======================================== */
+
+.recent-games-mobile-button {
+  display: none;
+
+  width: 100%;
+
+  margin-top: 14px;
+
+  min-height: 48px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    16px;
+
+  background:
+    #ffffff;
+
+  color:
+    var(--text);
+
+  cursor: pointer;
+
+  font-weight:
+    700;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 850px) {
+
+  .game-layout {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .recent-games-panel {
+    display: none;
+  }
+
+
+  .recent-games-mobile-button {
+    display: block;
+  }
+
+
+  .recent-games-panel.is-mobile-open {
+    display: block;
+
+    position: fixed;
+
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    top: auto;
+
+    z-index: 1000;
+
+    max-height:
+      min(
+        520px,
+        75vh
+      );
+
+    overflow-y: auto;
+  }
+
+
+  .recent-games-panel.is-mobile-open
+  .recent-games-close {
+    display: grid;
+
+    place-items: center;
+  }
+
+}
+
+/* ========================================
+   AD PLACEHOLDER
+======================================== */
+
+.ad-slot {
+  margin-top: 20px;
+}
+
+.ad-placeholder {
+  display: grid;
+  place-items: center;
+
+  min-height: 100px;
+  padding: 18px;
+
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  text-align: center;
+}
+
+.ad-placeholder span {
+  color: var(--muted);
+
+  font-size: 0.65rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ad-placeholder p {
+  margin: 5px 0 0;
+
+  color: var(--muted);
+
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* Desktop ad belongs in sidebar */
+.ad-slot-game-desktop {
+  display: block;
+}
+
+
+/* Mobile ad hidden on desktop */
+.ad-slot-game-mobile {
+  display: none;
+}
+
+
+@media (max-width: 850px) {
+
+  .ad-slot-game-desktop {
+    display: none;
+  }
+
+
+  .ad-slot-game-mobile {
+    display: block;
+
+    max-width: 520px;
+    margin: 20px auto 0;
+  }
 
 }

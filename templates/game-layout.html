@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="canonical" href="https://littlelearners.thenihonalley.workers.dev/games/{{GAME_SLUG}}/">
+
+  <meta property="og:url" content="https://littlelearners.thenihonalley.workers.dev/games/{{GAME_SLUG}}/">
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#fff8ee">
+
+
+  <!-- =========================
+       SEO
+  ========================== -->
+
+  <title>{{SEO_TITLE}}</title>
+
+  <meta name="description" content="{{SEO_DESCRIPTION}}">
+
+  <meta name="robots" content="index, follow">
+
+
+  <!-- =========================
+       SOCIAL SHARING
+  ========================== -->
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:title" content="{{SEO_TITLE}}">
+
+  <meta property="og:description" content="{{SEO_DESCRIPTION}}">
+
+  <meta property="og:site_name" content="Little Learners">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "{{GAME_TITLE}}",
+  "description": "{{SEO_DESCRIPTION}}",
+  "url": "https://littlelearners.thenihonalley.workers.dev/games/{{GAME_SLUG}}/",
+  "learningResourceType": "Interactive game",
+  "educationalUse": "Practice",
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student"
+  },
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "Little Learners",
+    "url": "https://littlelearners.thenihonalley.workers.dev/"
+  }
+}
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- =========================
+       SHARED GAME CSS
+  ========================== -->
+
+  <link rel="stylesheet" href="/css/game-master.css">
+
+</head>
+
+
+<body>
+
+
+  <main class="game-shell">
+
+
+    <!-- =========================
+         MASTER HEADER
+    ========================== -->
+
+    <header class="game-topbar">
+
+
+      <a href="/" class="game-home-button" aria-label="Go back home">
+        ←
+      </a>
+
+
+      <div class="game-heading">
+
+
+        <span class="game-heading-icon" aria-hidden="true">
+          {{GAME_ICON}}
+        </span>
+
+
+        <div>
+
+          <h1>
+            {{GAME_TITLE}}
+          </h1>
+
+          <p>
+            {{AGE_RANGE}}
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <button id="soundButton" class="game-sound-button" type="button" aria-label="Turn sound off">
+        🔊
+      </button>
+
+
+    </header>
+    <!-- =========================
+         UNIQUE GAME CONTENT
+    ========================== -->
+    <div class="game-layout">
+
+      <div class="game-main-column">
+
+        {{GAME_CONTENT}}
+
+      </div>
+
+
+      <aside id="recentGamesPanel" class="recent-games-panel" aria-label="More games">
+
+        <div class="recent-games-header">
+
+          <div>
+            <p class="recent-games-label">
+              More Games
+            </p>
+
+            <h2>
+              Keep Playing
+            </h2>
+          </div>
+
+          <button id="closeRecentGames" class="recent-games-close" type="button" aria-label="Close more games">
+            ×
+          </button>
+
+        </div>
+
+
+        <nav id="recentGamesList" class="recent-games-list" aria-label="Recent games"></nav>
+
+
+        <a href="/" class="recent-games-home">
+          View All Games
+        </a>
+        <!-- ========================================
+     AD SLOT — DESKTOP
+========================================= -->
+
+        <aside class="ad-slot ad-slot-game-desktop" aria-label="Advertisement">
+          <div class="ad-placeholder">
+            <span>Advertisement</span>
+            <p>Ad space reserved</p>
+          </div>
+
+
+          <!--
+  FUTURE REAL AD CODE:
+
+  [AD PROVIDER CODE HERE]
+  -->
+
+        </aside>
+    </div>
+    <!-- END .game-layout -->
+    <!-- =========================
+       MOBILE MORE GAMES
+  ========================== -->
+
+    <button id="openRecentGames" class="recent-games-mobile-button" type="button">
+      🎮 More Games
+    </button>
+    <!-- ========================================
+     AD SLOT — MOBILE
+========================================= -->
+
+    <aside class="ad-slot ad-slot-game-mobile" aria-label="Advertisement">
+      <div class="ad-placeholder">
+        <span>Advertisement</span>
+        <p>Ad space reserved</p>
+      </div>
+
+
+      <!--
+  FUTURE REAL AD CODE:
+
+  [AD PROVIDER CODE HERE]
+  -->
+
+    </aside>
+    </div>
+    <!-- =========================
+         SHARED CELEBRATION LAYER
+    ========================== -->
+
+    <div id="celebrationLayer" class="game-celebration-layer" aria-hidden="true"></div>
+
+
+
+    <!-- =========================
+         PARENTS & TEACHERS
+    ========================== -->
+
+    <section class="parent-guide">
+
+      <p class="parent-guide-label">
+        For Parents &amp; Teachers
+      </p>
+
+
+      <h2>
+        {{PARENT_HEADING}}
+      </h2>
+
+
+      <p>
+        {{PARENT_DESCRIPTION}}
+      </p>
+
+
+      <h3>
+        What children practice
+      </h3>
+
+
+      {{SKILLS_LIST}}
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       SHARED JAVASCRIPT
+  ========================== -->
+
+  <script src="/js/game-common.js"></script>
+  <script src="/js/recent-games.js"></script>
+  <script src="/js/kofi-widget.js"></script>
+  <script src="/games/{{GAME_SLUG}}/game.js"></script>
+
+
+</body>
+
+</html>

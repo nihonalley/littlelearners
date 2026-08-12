@@ -1,211 +1,87 @@
 const ANIMALS = [
-
-  {
-    name: "dog",
-    sound: "Woof woof!"
-  },
-
-  {
-    name: "cat",
-    sound: "Meow meow!"
-  },
-
-  {
-    name: "duck",
-    sound: "Quack quack!"
-  },
-
-  {
-    name: "frog",
-    sound: "Ribbit ribbit!"
-  },
-
-  {
-    name: "fish",
-    sound: "Bloop bloop!"
-  },
-
-  {
-    name: "elephant",
-    sound: "Pawoo pawoo!"
-  },
-
-  {
-    name: "lion",
-    sound: "Roar!"
-  },
-
-  {
-    name: "monkey",
-    sound: "Ooh ooh, ah ah!"
-  },
-
-  {
-    name: "rabbit",
-    sound: "Hop hop!"
-  },
-
-  {
-    name: "turtle",
-    sound: "Slow, slow!"
-  },
-
-  {
-    name: "shark",
-    sound: "Chomp chomp!"
-  },
-
-  {
-    name: "penguin",
-    sound: "Waddle waddle!"
-  },
-
-  {
-    name: "bear",
-    sound: "Grrr, roar!"
-  },
-
-  {
-    name: "pig",
-    sound: "Oink oink!"
-  },
-
-  {
-    name: "horse",
-    sound: "Neigh neigh!"
-  },
-
-  {
-    name: "cow",
-    sound: "Moo moo!"
-  },
-
-  {
-    name: "mouse",
-    sound: "Squeak squeak!"
-  },
-
+  { name: "dog", sound: "woof woof" },
+  { name: "cat", sound: "meow meow" },
+  { name: "duck", sound: "quack quack" },
+  { name: "frog", sound: "ribbit ribbit" },
+  { name: "fish", sound: "bloop bloop" },
+  { name: "elephant", sound: "elephant trumpet" },
+  { name: "lion", sound: "lion roar" },
+  { name: "monkey", sound: "oh oh ah ah" },
+  { name: "rabbit", sound: "hop hop" },
+  { name: "turtle", sound: "slow slow" },
+  { name: "shark", sound: "chomp chomp" },
+  { name: "penguin", sound: "waddle waddle" },
+  { name: "bear", sound: "bear roar" },
+  { name: "pig", sound: "oink oink" },
+  { name: "horse", sound: "neigh neigh" },
+  { name: "cow", sound: "moo moo" },
+  { name: "mouse", sound: "squeak squeak" },
   {
     name: "trex",
     spokenName: "T-Rex",
-    sound: "Roar!"
+    sound: "dinosaur roar"
   },
-
-  {
-    name: "sheep",
-    sound: "Baa baa!"
-  },
-
-  {
-    name: "crocodile",
-    sound: "Snap snap!"
-  }
-
+  { name: "sheep", sound: "ba ba" },
+  { name: "crocodile", sound: "snap snap" }
 ];
 
 
 const TOTAL_ROUNDS = 8;
 
 
-
-/* --------------------------------
+/* ========================================
    ELEMENTS
--------------------------------- */
+======================================== */
 
 const startScreen =
-  document.getElementById(
-    "startScreen"
-  );
-
+  document.getElementById("startScreen");
 
 const playScreen =
-  document.getElementById(
-    "playScreen"
-  );
-
+  document.getElementById("playScreen");
 
 const finishScreen =
-  document.getElementById(
-    "finishScreen"
-  );
-
+  document.getElementById("finishScreen");
 
 const startButton =
-  document.getElementById(
-    "startButton"
-  );
-
+  document.getElementById("startButton");
 
 const playAgainButton =
-  document.getElementById(
-    "playAgainButton"
-  );
-
+  document.getElementById("playAgainButton");
 
 const repeatButton =
-  document.getElementById(
-    "repeatButton"
-  );
-
+  document.getElementById("repeatButton");
 
 const soundButton =
-  document.getElementById(
-    "soundButton"
-  );
+  document.getElementById("soundButton");
 
+const findAnimalButton =
+  document.getElementById("findAnimalButton");
 
-const animalsOnlyButton =
-  document.getElementById(
-    "animalsOnlyButton"
-  );
-
-
-const animalSoundsButton =
-  document.getElementById(
-    "animalSoundsButton"
-  );
-
+const guessSoundButton =
+  document.getElementById("guessSoundButton");
 
 const animalChoices =
-  document.getElementById(
-    "animalChoices"
-  );
-
+  document.getElementById("animalChoices");
 
 const roundLabel =
-  document.getElementById(
-    "roundLabel"
-  );
-
+  document.getElementById("roundLabel");
 
 const prompt =
-  document.getElementById(
-    "prompt"
-  );
-
+  document.getElementById("prompt");
 
 const feedback =
-  document.getElementById(
-    "feedback"
-  );
-
+  document.getElementById("feedback");
 
 const progressBar =
-  document.getElementById(
-    "progressBar"
-  );
-
+  document.getElementById("progressBar");
 
 const celebrationLayer =
-  document.getElementById(
-    "celebrationLayer"
-  );
+  document.getElementById("celebrationLayer");
 
 
-
-/* --------------------------------
+/* ========================================
    STATE
--------------------------------- */
+======================================== */
 
 let currentRound = 1;
 
@@ -217,133 +93,56 @@ let wrongAttempts = 0;
 
 let roundLocked = false;
 
-
 /*
-  false:
-  "Find the dog."
+  MODE 1:
+  find-animal
 
-  true:
-  "Find the dog. Woof woof!"
+  MODE 2:
+  guess-sound
 */
 
-let funSoundsEnabled = false;
+let gameMode =
+  "find-animal";
 
 
-
-/* --------------------------------
+/* ========================================
    SHARED SOUND
--------------------------------- */
+======================================== */
 
 LittleLearners.attachSoundButton(
   soundButton
 );
 
 
-
-/* --------------------------------
-   MODE SELECTOR
--------------------------------- */
-
-function updateModeButtons() {
-
-  animalsOnlyButton
-    .classList
-    .toggle(
-      "is-active",
-      !funSoundsEnabled
-    );
-
-
-  animalSoundsButton
-    .classList
-    .toggle(
-      "is-active",
-      funSoundsEnabled
-    );
-
-}
-
-
-
-animalsOnlyButton
-  .addEventListener(
-    "click",
-    () => {
-
-      funSoundsEnabled =
-        false;
-
-
-      updateModeButtons();
-
-
-      speakInstruction();
-
-    }
-  );
-
-
-
-animalSoundsButton
-  .addEventListener(
-    "click",
-    () => {
-
-      funSoundsEnabled =
-        true;
-
-
-      updateModeButtons();
-
-
-      speakInstruction();
-
-    }
-  );
-
-
-
-/* --------------------------------
+/* ========================================
    HELPERS
--------------------------------- */
+======================================== */
 
-function displayName(
-  animal
-) {
+function displayName(animal) {
 
   return (
-    animal.spokenName
-    ||
+    animal.spokenName ||
     animal.name
   );
-
 }
 
 
-
-function getChoiceCount(
-  round
-) {
+function getChoiceCount(round) {
 
   /*
-    Rounds 1–2 = 2
-    Rounds 3–4 = 3
-    Rounds 5–6 = 4
-    Rounds 7–8 = 5
+    Rounds 1–2 = 2 choices
+    Rounds 3–4 = 3 choices
+    Rounds 5–6 = 4 choices
+    Rounds 7–8 = 5 choices
   */
 
   return (
-    2
-    +
+    2 +
     Math.floor(
-      (round - 1)
-      /
-      2
+      (round - 1) / 2
     )
   );
-
 }
-
 
 
 function chooseTarget() {
@@ -367,62 +166,119 @@ function chooseTarget() {
 
 
   return animal;
-
 }
 
 
-
-function assetPath(
-  animal
-) {
+function assetPath(animal) {
 
   return (
-    "../../assets/animals/"
-    +
-    animal.name
-    +
+    "/assets/animals/" +
+    animal.name +
     ".png"
   );
-
 }
 
 
+/* ========================================
+   GAME MODE
+======================================== */
 
-/* --------------------------------
-   INSTRUCTION
--------------------------------- */
+function updateModeButtons() {
+
+  findAnimalButton
+    .classList
+    .toggle(
+      "is-active",
+      gameMode === "find-animal"
+    );
+
+
+  guessSoundButton
+    .classList
+    .toggle(
+      "is-active",
+      gameMode === "guess-sound"
+    );
+}
+
+
+function setGameMode(mode) {
+
+  if (
+    gameMode === mode
+  ) {
+    return;
+  }
+
+
+  gameMode =
+    mode;
+
+
+  updateModeButtons();
+
+
+  /*
+    If the child is already playing,
+    begin a fresh round using the new mode.
+  */
+
+  if (
+    !playScreen.classList.contains(
+      "is-hidden"
+    )
+  ) {
+
+    wrongAttempts = 0;
+
+    roundLocked = false;
+
+    feedback.textContent = "";
+
+    renderCurrentRound();
+
+  }
+}
+
+
+/* ========================================
+   PROMPT
+======================================== */
 
 function getPromptText() {
 
-  return (
-    `Find the ${displayName(currentTarget)}!`
-  );
-
-}
-
-
-
-function getSpeechText() {
-
-  const base =
-    `Can you find the ${displayName(currentTarget)}?`;
-
-
   if (
-    !funSoundsEnabled
+    gameMode === "guess-sound"
   ) {
 
-    return base;
-
+    return (
+      `What animal says ${currentTarget.sound}?`
+    );
   }
 
 
   return (
-    `${base} ${currentTarget.sound}`
+    `Find the ${displayName(currentTarget)}!`
   );
-
 }
 
+
+function getSpeechText() {
+
+  if (
+    gameMode === "guess-sound"
+  ) {
+
+    return (
+      `What animal says ${currentTarget.sound}?`
+    );
+  }
+
+
+  return (
+    `Can you find the ${displayName(currentTarget)}?`
+  );
+}
 
 
 function speakInstruction() {
@@ -441,14 +297,12 @@ function speakInstruction() {
       pitch: 1.16
     }
   );
-
 }
 
 
-
-/* --------------------------------
+/* ========================================
    START GAME
--------------------------------- */
+======================================== */
 
 function startGame() {
 
@@ -456,37 +310,33 @@ function startGame() {
 
   previousAnimal = null;
 
+  wrongAttempts = 0;
+
+  roundLocked = false;
+
 
   startScreen
     .classList
-    .add(
-      "is-hidden"
-    );
+    .add("is-hidden");
 
 
   finishScreen
     .classList
-    .add(
-      "is-hidden"
-    );
+    .add("is-hidden");
 
 
   playScreen
     .classList
-    .remove(
-      "is-hidden"
-    );
+    .remove("is-hidden");
 
 
   beginRound();
-
 }
 
 
-
-/* --------------------------------
+/* ========================================
    ROUND
--------------------------------- */
+======================================== */
 
 function beginRound() {
 
@@ -494,14 +344,18 @@ function beginRound() {
 
   roundLocked = false;
 
-
-  feedback.textContent =
-    "";
+  feedback.textContent = "";
 
 
   currentTarget =
     chooseTarget();
 
+
+  renderCurrentRound();
+}
+
+
+function renderCurrentRound() {
 
   roundLabel.textContent =
     `Round ${currentRound} of ${TOTAL_ROUNDS}`;
@@ -514,12 +368,9 @@ function beginRound() {
   progressBar.style.width =
     `${
       (
-        currentRound
-        /
+        currentRound /
         TOTAL_ROUNDS
-      )
-      *
-      100
+      ) * 100
     }%`;
 
 
@@ -534,18 +385,14 @@ function beginRound() {
     speakInstruction,
     320
   );
-
 }
 
 
+/* ========================================
+   ANIMAL CHOICES
+======================================== */
 
-/* --------------------------------
-   CHOICES
--------------------------------- */
-
-function renderChoices(
-  count
-) {
+function renderChoices(count) {
 
   animalChoices.innerHTML =
     "";
@@ -609,9 +456,7 @@ function renderChoices(
 
 
       image.src =
-        assetPath(
-          animal
-        );
+        assetPath(animal);
 
 
       image.alt =
@@ -636,21 +481,18 @@ function renderChoices(
       );
 
 
-      animalChoices
-        .appendChild(
-          button
-        );
+      animalChoices.appendChild(
+        button
+      );
 
     }
   );
-
 }
 
 
-
-/* --------------------------------
+/* ========================================
    ANSWER
--------------------------------- */
+======================================== */
 
 function handleChoice(
   button,
@@ -673,9 +515,7 @@ function handleChoice(
       button
     );
 
-
     return;
-
   }
 
 
@@ -683,18 +523,14 @@ function handleChoice(
     button,
     animal
   );
-
 }
 
 
-
-/* --------------------------------
+/* ========================================
    CORRECT
--------------------------------- */
+======================================== */
 
-function handleCorrect(
-  button
-) {
+function handleCorrect(button) {
 
   roundLocked =
     true;
@@ -709,7 +545,6 @@ function handleCorrect(
 
         choice.disabled =
           true;
-
 
         choice.classList.remove(
           "is-hint"
@@ -737,12 +572,17 @@ function handleCorrect(
     message;
 
 
+  /*
+    Reinforce the association in
+    Guess the Sound mode.
+  */
+
   if (
-    funSoundsEnabled
+    gameMode === "guess-sound"
   ) {
 
     speech +=
-      ` ${currentTarget.sound}`;
+      ` The ${displayName(currentTarget)} says ${currentTarget.sound}.`;
 
   }
 
@@ -771,28 +611,23 @@ function handleCorrect(
 
         finishGame();
 
-
         return;
-
       }
 
 
       currentRound++;
 
-
       beginRound();
 
     },
-    1300
+    1350
   );
-
 }
 
 
-
-/* --------------------------------
+/* ========================================
    WRONG
--------------------------------- */
+======================================== */
 
 function handleWrong(
   button,
@@ -819,22 +654,22 @@ function handleWrong(
     "Try again!";
 
 
-  let speech =
-    `That's the ${displayName(animal)}.`;
+  let speech;
 
 
   if (
-    funSoundsEnabled
+    gameMode === "guess-sound"
   ) {
 
-    speech +=
-      ` ${animal.sound}`;
+    speech =
+      `That's the ${displayName(animal)}. Try again!`;
+
+  } else {
+
+    speech =
+      `That's the ${displayName(animal)}. Let's try again!`;
 
   }
-
-
-  speech +=
-    " Let's try again!";
 
 
   LittleLearners.speak(
@@ -853,14 +688,12 @@ function handleWrong(
     showHint();
 
   }
-
 }
 
 
-
-/* --------------------------------
+/* ========================================
    HINT
--------------------------------- */
+======================================== */
 
 function showHint() {
 
@@ -876,34 +709,26 @@ function showHint() {
 
     correctButton
       .classList
-      .add(
-        "is-hint"
-      );
+      .add("is-hint");
 
   }
-
 }
 
 
-
-/* --------------------------------
+/* ========================================
    FINISH
--------------------------------- */
+======================================== */
 
 function finishGame() {
 
   playScreen
     .classList
-    .add(
-      "is-hidden"
-    );
+    .add("is-hidden");
 
 
   finishScreen
     .classList
-    .remove(
-      "is-hidden"
-    );
+    .remove("is-hidden");
 
 
   LittleLearners.speak(
@@ -919,33 +744,18 @@ function finishGame() {
     celebrationLayer,
     16
   );
-
 }
 
 
-
-/* --------------------------------
+/* ========================================
    EVENTS
--------------------------------- */
+======================================== */
 
 startButton
   .addEventListener(
     "click",
-    () => {
-
-      LittleLearners.speak(
-        "Let's find some animals!"
-      );
-
-
-      setTimeout(
-        startGame,
-        250
-      );
-
-    }
+    startGame
   );
-
 
 
 playAgainButton
@@ -955,13 +765,37 @@ playAgainButton
   );
 
 
-
 repeatButton
   .addEventListener(
     "click",
     speakInstruction
   );
 
+
+findAnimalButton
+  .addEventListener(
+    "click",
+    () => {
+
+      setGameMode(
+        "find-animal"
+      );
+
+    }
+  );
+
+
+guessSoundButton
+  .addEventListener(
+    "click",
+    () => {
+
+      setGameMode(
+        "guess-sound"
+      );
+
+    }
+  );
 
 
 updateModeButtons();

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://littlelearners.thenihonalley.workers.dev/sitemap.xml
