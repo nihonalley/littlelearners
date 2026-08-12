@@ -129,38 +129,72 @@ const pages = {
         ]
 
     },
+
     "bubble-pop": {
 
-  gameTitle:
-    "Bubble Pop",
+        gameTitle:
+            "Bubble Pop",
 
-  icon:
-    "🫧",
+        icon:
+            "🫧",
 
-  ageRange:
-    "Ages 2–4",
+        ageRange:
+            "Ages 2–4",
 
-  seoTitle:
-    "Bubble Pop Learning Game for Toddlers | Little Learners",
+        seoTitle:
+            "Bubble Pop Learning Game for Toddlers | Little Learners",
 
-  seoDescription:
-    "A free interactive bubble popping learning game for toddlers and preschoolers ages 2–4. Practice colors, uppercase letters and numbers 1–10.",
+        seoDescription:
+            "A free interactive bubble popping learning game for toddlers and preschoolers ages 2–4. Practice colors, uppercase letters and numbers 1–10.",
 
-  parentHeading:
-    "Bubble Pop Learning Game for Toddlers",
+        parentHeading:
+            "Bubble Pop Learning Game for Toddlers",
 
-  parentDescription:
-    "Bubble Pop combines early learning with a simple tap-and-pop activity for toddlers and preschoolers ages 2–4. Children can practice colors, uppercase letters or numbers 1–10 while developing visual recognition, listening skills and hand-eye coordination.",
+        parentDescription:
+            "Bubble Pop combines early learning with a simple tap-and-pop activity for toddlers and preschoolers ages 2–4. Children can practice colors, uppercase letters or numbers 1–10 while developing visual recognition, listening skills and hand-eye coordination.",
 
-  skills: [
-    "Color recognition",
-    "Letter recognition",
-    "Number recognition",
-    "Listening skills",
-    "Hand-eye coordination"
-  ]
+        skills: [
+            "Color recognition",
+            "Letter recognition",
+            "Number recognition",
+            "Listening skills",
+            "Hand-eye coordination"
+        ]
 
-}
+    },
+
+    "find-the-shape": {
+
+        gameTitle:
+            "Find the Shape",
+
+        icon:
+            "🎁",
+
+        ageRange:
+            "Ages 2–4",
+
+        seoTitle:
+            "Shape Learning Game for Toddlers | Little Learners",
+
+        seoDescription:
+            "A free interactive shape learning game for toddlers and preschoolers ages 2–4. Open a surprise box, identify shapes and connect everyday objects with basic geometry.",
+
+        parentHeading:
+            "Shape Recognition Game for Toddlers",
+
+        parentDescription:
+            "Find the Shape is an interactive preschool learning game where children open a surprise box and identify the shape hidden inside. Children can practice basic shapes or connect familiar everyday objects with their geometric shapes using easy, normal and challenge difficulty levels.",
+
+        skills: [
+            "Shape recognition",
+            "Visual matching",
+            "Vocabulary",
+            "Listening skills",
+            "Early geometry"
+        ]
+
+    }
 
 };
 

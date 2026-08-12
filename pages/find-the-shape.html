@@ -1,0 +1,271 @@
+<!-- START SCREEN -->
+
+<section
+  id="startScreen"
+  class="game-screen game-center-screen"
+>
+  <div
+    class="game-start-icon"
+    aria-hidden="true"
+  >
+    🎁
+  </div>
+
+  <h2>Find the Shape</h2>
+
+  <p>
+    Open the surprise box and guess the shape.
+  </p>
+
+
+  <div class="shape-settings">
+
+    <div class="shape-settings-group">
+
+      <p class="shape-settings-label">
+        Game Mode
+      </p>
+
+      <div class="game-mode-selector">
+
+        <button
+          id="shapeModeButton"
+          class="game-mode-button is-active"
+          type="button"
+        >
+          🔷 Shapes
+        </button>
+
+        <button
+          id="objectModeButton"
+          class="game-mode-button"
+          type="button"
+        >
+          🧸 Everyday Objects
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="shape-settings-group">
+
+      <p class="shape-settings-label">
+        Difficulty
+      </p>
+
+      <div class="game-mode-selector">
+
+        <button
+          id="easyButton"
+          class="game-mode-button is-active"
+          type="button"
+        >
+          🌱 Easy
+        </button>
+
+        <button
+          id="normalButton"
+          class="game-mode-button"
+          type="button"
+        >
+          ⭐ Normal
+        </button>
+
+        <button
+          id="challengeButton"
+          class="game-mode-button"
+          type="button"
+        >
+          🚀 Challenge
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <button
+    id="startButton"
+    class="game-primary-button"
+    type="button"
+  >
+    Start Game
+  </button>
+</section>
+
+
+<!-- PLAY SCREEN -->
+
+<section
+  id="playScreen"
+  class="game-screen game-play-screen shape-room is-hidden"
+>
+
+  <div class="game-meta">
+
+    <span
+      id="roundLabel"
+      class="game-round-label"
+    >
+      Round 1 of 8
+    </span>
+
+    <button
+      id="repeatButton"
+      class="game-repeat-button"
+      type="button"
+    >
+      🔊 Hear Again
+    </button>
+
+  </div>
+
+
+  <h2
+    id="prompt"
+    class="game-prompt"
+  >
+    What shape is in the box?
+  </h2>
+
+
+  <div
+    id="feedback"
+    class="game-feedback"
+    aria-live="polite"
+  ></div>
+
+
+  <div class="shape-room-scene">
+
+    <div
+      class="shape-room-star"
+      aria-hidden="true"
+    >
+      ✦
+    </div>
+
+    <div
+      class="shape-room-shelf"
+      aria-hidden="true"
+    >
+      <span>🧸</span>
+    </div>
+
+    <div
+      class="shape-room-plant"
+      aria-hidden="true"
+    >
+      🪴
+    </div>
+
+
+    <!-- SURPRISE REVEAL -->
+
+    <div class="surprise-stage">
+
+      <div
+        id="revealedObject"
+        class="revealed-object is-hidden"
+        aria-live="polite"
+      ></div>
+
+
+      <button
+        id="giftBox"
+        class="gift-box"
+        type="button"
+        aria-label="Open the surprise box"
+      >
+
+        <span class="gift-lid">
+          <span class="gift-bow">
+            ✦
+          </span>
+        </span>
+
+        <span class="gift-body">
+          <span class="gift-ribbon"></span>
+        </span>
+
+      </button>
+
+
+      <button
+        id="openBoxButton"
+        class="open-box-button"
+        type="button"
+      >
+        🎁 Open the Box
+      </button>
+
+    </div>
+
+
+    <!-- ANSWERS -->
+
+    <div
+      id="shapeChoices"
+      class="shape-answer-area is-hidden"
+      aria-label="Shape choices"
+    ></div>
+
+  </div>
+
+
+  <div class="game-progress-track">
+
+    <div
+      id="progressBar"
+      class="game-progress-bar"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- FINISH SCREEN -->
+
+<section
+  id="finishScreen"
+  class="game-screen game-center-screen is-hidden"
+>
+
+  <div
+    class="game-finish-icon"
+    aria-hidden="true"
+  >
+    ⭐
+  </div>
+
+  <h2>All done!</h2>
+
+  <p>
+    Great job learning your shapes!
+  </p>
+
+  <div class="game-finish-actions">
+
+    <button
+      id="playAgainButton"
+      class="game-primary-button"
+      type="button"
+    >
+      Play Again
+    </button>
+
+    <a
+      href="/"
+      class="game-secondary-button"
+    >
+      Home
+    </a>
+
+  </div>
+
+</section>

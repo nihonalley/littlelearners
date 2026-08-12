@@ -37,6 +37,12 @@
       title: "Bubble Pop",
       icon: "🫧",
       url: "/games/bubble-pop/"
+    },
+    {
+      slug: "find-the-shape",
+      title: "Find the Shape",
+      icon: "🎁",
+      url: "/games/find-the-shape/"
     }
   ];
 

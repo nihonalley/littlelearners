@@ -273,12 +273,12 @@ fs.mkdirSync(
 ======================================== */
 
 const SHARED_ITEMS = [
-  "index.html",
-  "css",
-  "js",
-  "assets",
-  "robots.txt",
-  "sitemap.xml"
+    "index.html",
+    "css",
+    "js",
+    "assets",
+    "robots.txt",
+    "sitemap.xml"
 ];
 
 
@@ -330,7 +330,8 @@ const MASTER_GAMES = [
     "colored-objects",
     "find-the-letter",
     "find-the-animal",
-  "bubble-pop"
+    "bubble-pop",
+    "find-the-shape"
 ];
 
 

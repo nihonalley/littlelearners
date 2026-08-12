@@ -1422,206 +1422,843 @@ body.suggest-game-open {
 }
 
 /* ========================================
-   BUBBLE POP
+   FIND THE SHAPE
 ======================================== */
 
-.bubble-mode-selector {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.shape-settings {
+  width: min(100%, 520px);
 
-  gap: 8px;
+  display: grid;
+  gap: 18px;
 
   margin:
-    12px
+    10px
     0
-    22px;
+    24px;
 }
 
 
-.bubble-field {
+.shape-settings-group {
+  display: grid;
+  gap: 8px;
+}
+
+
+.shape-settings-label {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  text-align: center;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.07em;
+}
+
+
+/* ========================================
+   PLAYFUL ROOM
+======================================== */
+
+.shape-room-scene {
   position: relative;
 
   flex: 1;
 
-  min-height: 390px;
+  min-height: 470px;
 
   overflow: hidden;
 
   margin:
-    14px
+    12px
     0
-    28px;
+    26px;
 
-  border-radius: 24px;
+  border-radius: 26px;
 
   background:
     linear-gradient(
-      180deg,
-      rgba(225, 247, 255, 0.65),
-      rgba(255, 245, 251, 0.55)
+      to bottom,
+      #fff9f1 0%,
+      #fff9f1 68%,
+      #f2dfca 68%,
+      #f2dfca 100%
     );
-}
-
-
-.learning-bubble {
-  --size: 105px;
-
-  position: absolute;
-
-  width: var(--size);
-  height: var(--size);
-
-  display: grid;
-  place-items: center;
 
   border:
-    3px solid
-    rgba(255,255,255,0.7);
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle at 30% 25%,
-      rgba(255,255,255,0.95) 0 7%,
-      rgba(255,255,255,0.45) 8% 15%,
-      var(--bubble-color) 48%,
-      rgba(255,255,255,0.28) 100%
-    );
-
-  box-shadow:
-    inset -8px -10px 20px
-    rgba(90, 80, 130, 0.08),
-
-    0 8px 20px
-    rgba(80, 80, 110, 0.09);
-
-  color:
-    #293238;
-
-  font-family:
-    "Fredoka",
-    sans-serif;
-
-  font-size:
-    clamp(
-      2.4rem,
-      8vw,
-      4.4rem
-    );
-
-  font-weight:
-    700;
-
-  cursor: pointer;
-
-  touch-action: manipulation;
-
-  animation:
-    bubbleFloat
-    var(--bubble-speed)
-    ease-in-out
-    infinite
-    alternate;
+    1px solid
+    rgba(210, 190, 160, 0.45);
 }
 
 
-.learning-bubble::after {
+.shape-room-scene::before {
   content: "";
 
   position: absolute;
 
-  width: 21%;
-  height: 10%;
+  left: 0;
+  right: 0;
 
-  top: 17%;
-  left: 21%;
+  top: 68%;
 
-  border-radius: 50%;
+  height: 7px;
 
   background:
-    rgba(255,255,255,0.68);
+    #d7b796;
+
+  opacity: 0.65;
+}
+
+
+/* subtle decor */
+
+.shape-room-star {
+  position: absolute;
+
+  top: 24px;
+  right: 42px;
+
+  color: #ffd65a;
+
+  font-size: 38px;
+
+  opacity: 0.55;
+}
+
+
+.shape-room-shelf {
+  position: absolute;
+
+  left: 28px;
+  top: 78px;
+
+  width: 100px;
+  height: 8px;
+
+  border-radius: 999px;
+
+  background: #cfab87;
+
+  opacity: 0.55;
+}
+
+
+.shape-room-shelf span {
+  position: absolute;
+
+  left: 30px;
+  bottom: 6px;
+
+  font-size: 34px;
+}
+
+
+.shape-room-plant {
+  position: absolute;
+
+  right: 28px;
+  bottom: 64px;
+
+  font-size: 42px;
+
+  opacity: 0.65;
+}
+
+
+/* ========================================
+   SURPRISE BOX
+======================================== */
+
+.surprise-stage {
+  position: absolute;
+
+  left: 50%;
+  top: 48%;
+
+  width: 280px;
+  height: 300px;
 
   transform:
-    rotate(-25deg);
+    translate(
+      -50%,
+      -50%
+    );
 
-  pointer-events: none;
+  display: grid;
+
+  place-items: center;
 }
 
 
-.learning-bubble.is-popping {
-  pointer-events: none;
+.gift-box {
+  position: relative;
 
-  animation:
-    bubblePop
-    240ms
-    ease-out
-    forwards;
+  width: 150px;
+  height: 145px;
+
+  margin-top: 76px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  padding: 0;
+
+  touch-action: manipulation;
 }
 
 
-.learning-bubble.is-hint {
+.gift-body {
+  position: absolute;
+
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+
+  height: 105px;
+
+  border-radius:
+    8px
+    8px
+    18px
+    18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff9eb7,
+      #f47c9f
+    );
+
   box-shadow:
-    0 0 0 10px
-    rgba(255, 214, 90, 0.33);
+    0 14px 26px
+    rgba(
+      80,
+      50,
+      60,
+      0.14
+    );
+}
 
+
+.gift-ribbon {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 24px;
+  height: 100%;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    #ffd65a;
+}
+
+
+.gift-lid {
+  position: absolute;
+
+  left: 5px;
+  right: 5px;
+  top: 22px;
+
+  height: 42px;
+
+  z-index: 2;
+
+  border-radius:
+    12px
+    12px
+    8px
+    8px;
+
+  background:
+    #ffb2c5;
+
+  box-shadow:
+    0 8px 14px
+    rgba(
+      80,
+      50,
+      60,
+      0.12
+    );
+
+  transform-origin:
+    center bottom;
+}
+
+
+.gift-bow {
+  position: absolute;
+
+  left: 50%;
+  top: -26px;
+
+  transform:
+    translateX(-50%);
+
+  width: 52px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius:
+    50%;
+
+  color:
+    #f0ae14;
+
+  font-size: 28px;
+
+  background:
+    #ffe17c;
+}
+
+
+.gift-box.is-wiggling {
   animation:
-    bubbleHint
-    850ms
+    giftWiggle
+    650ms
     ease-in-out
     infinite;
 }
 
 
-@keyframes bubbleFloat {
+.gift-box.is-opening
+.gift-lid {
+  animation:
+    giftLidOpen
+    620ms
+    ease-out
+    forwards;
+}
 
-  from {
+
+.gift-box.is-opening
+.gift-body {
+  animation:
+    giftBodyBounce
+    520ms
+    ease-out;
+}
+
+
+/* ========================================
+   OPEN BUTTON
+======================================== */
+
+.open-box-button {
+  position: absolute;
+
+  bottom: 4px;
+
+  min-height: 46px;
+
+  padding:
+    10px
+    18px;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  background:
+    #ffd65a;
+
+  color:
+    #332d1e;
+
+  font-weight:
+    700;
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   REVEALED OBJECT / SHAPE
+======================================== */
+
+.revealed-object {
+  position: absolute;
+
+  top: 10px;
+
+  z-index: 5;
+
+  width: 160px;
+  height: 160px;
+
+  display: grid;
+  place-items: center;
+
+  animation:
+    revealObject
+    620ms
+    cubic-bezier(
+      0.2,
+      1.2,
+      0.3,
+      1
+    );
+}
+
+
+.revealed-object.is-hidden {
+  display: none;
+}
+
+
+.revealed-object svg {
+  width: 145px;
+  height: 145px;
+
+  fill:
+    var(--shape-color);
+}
+
+
+.revealed-object
+.everyday-object {
+  font-size: 105px;
+
+  line-height: 1;
+}
+
+
+/* CSS OBJECTS */
+
+.css-object {
+  position: relative;
+}
+
+
+/* square window */
+
+.css-window {
+  width: 120px;
+  height: 120px;
+
+  border:
+    10px solid
+    #91bde0;
+
+  background:
+    #dff3ff;
+
+  box-shadow:
+    inset 0 0 0 5px
+    #ffffff;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  grid-template-rows:
+    1fr
+    1fr;
+}
+
+
+.css-window::before,
+.css-window::after {
+  content: "";
+
+  position: absolute;
+
+  background:
+    #ffffff;
+}
+
+
+.css-window::before {
+  width: 7px;
+
+  top: 0;
+  bottom: 0;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+}
+
+
+.css-window::after {
+  height: 7px;
+
+  left: 0;
+  right: 0;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+}
+
+
+/* door */
+
+.css-door {
+  width: 92px;
+  height: 145px;
+
+  border-radius:
+    8px
+    8px
+    2px
+    2px;
+
+  background:
+    #d19768;
+
+  border:
+    7px solid
+    #a97047;
+}
+
+
+.css-door::after {
+  content: "";
+
+  position: absolute;
+
+  right: 13px;
+  top: 74px;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background:
+    #ffe17c;
+}
+
+
+/* kite */
+
+.css-kite {
+  width: 105px;
+  height: 105px;
+
+  background:
+    #9bd7f1;
+
+  transform:
+    rotate(45deg);
+
+  border:
+    6px solid
+    #6ba7c1;
+}
+
+
+.css-kite::after {
+  content: "";
+
+  position: absolute;
+
+  width: 4px;
+  height: 70px;
+
+  background:
+    #8f795d;
+
+  right: -33px;
+  bottom: -52px;
+
+  transform:
+    rotate(-45deg);
+}
+
+
+/* triangle sign */
+
+.css-triangle-sign {
+  width: 0;
+  height: 0;
+
+  border-left:
+    62px solid
+    transparent;
+
+  border-right:
+    62px solid
+    transparent;
+
+  border-bottom:
+    110px solid
+    #f5c45f;
+
+  filter:
+    drop-shadow(
+      0 0 0
+      #d7a538
+    );
+}
+
+
+/* ========================================
+   ANSWERS
+======================================== */
+
+.shape-answer-area {
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+  bottom: 22px;
+
+  z-index: 8;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+
+  gap:
+    clamp(
+      18px,
+      5vw,
+      52px
+    );
+}
+
+
+.shape-answer-area.is-hidden {
+  display: none;
+}
+
+
+.shape-answer-button {
+  width:
+    clamp(
+      92px,
+      18vw,
+      130px
+    );
+
+  border: 0;
+
+  background:
+    transparent;
+
+  color:
+    var(--text);
+
+  cursor: pointer;
+
+  text-align: center;
+
+  font-family:
+    "Fredoka",
+    sans-serif;
+
+  transition:
+    transform
+    150ms ease;
+}
+
+
+.shape-answer-button:hover {
+  transform:
+    translateY(-3px);
+}
+
+
+.shape-answer-button:active {
+  transform:
+    scale(0.95);
+}
+
+
+.shape-answer-icon {
+  width:
+    clamp(
+      72px,
+      14vw,
+      100px
+    );
+
+  height:
+    clamp(
+      72px,
+      14vw,
+      100px
+    );
+
+  display: grid;
+
+  place-items: center;
+
+  margin:
+    0
+    auto
+    8px;
+}
+
+
+.shape-answer-icon svg {
+  width: 100%;
+  height: 100%;
+
+  fill:
+    var(--answer-color);
+}
+
+
+.shape-answer-label {
+  display: block;
+
+  font-size:
+    clamp(
+      0.82rem,
+      2vw,
+      1rem
+    );
+
+  font-weight:
+    700;
+}
+
+
+.shape-answer-button.is-wrong {
+  animation:
+    answerWiggle
+    350ms ease;
+}
+
+
+.shape-answer-button.is-hint
+.shape-answer-icon {
+  animation:
+    answerPulse
+    800ms
+    ease-in-out
+    infinite;
+}
+
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes giftWiggle {
+
+  0%,
+  100% {
     transform:
-      translate(
-        -5px,
-        5px
-      );
+      rotate(0);
   }
 
-  to {
+  25% {
     transform:
-      translate(
-        8px,
-        -20px
-      );
+      rotate(-4deg);
+  }
+
+  75% {
+    transform:
+      rotate(4deg);
   }
 
 }
 
 
-@keyframes bubblePop {
+@keyframes giftLidOpen {
 
   0% {
     transform:
-      scale(1);
-
-    opacity: 1;
+      translateY(0)
+      rotate(0);
   }
 
-  55% {
+  60% {
     transform:
-      scale(1.28);
-
-    opacity: 0.7;
+      translateY(-72px)
+      rotate(-14deg);
   }
 
   100% {
     transform:
-      scale(0);
-
-    opacity: 0;
+      translateY(-58px)
+      rotate(-9deg);
   }
 
 }
 
 
-@keyframes bubbleHint {
+@keyframes giftBodyBounce {
+
+  0% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.05, 0.94);
+  }
+
+  100% {
+    transform:
+      scale(1);
+  }
+
+}
+
+
+@keyframes revealObject {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(70px)
+      scale(0.55);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+@keyframes answerWiggle {
+
+  25% {
+    transform:
+      translateX(-6px);
+  }
+
+  75% {
+    transform:
+      translateX(6px);
+  }
+
+}
+
+
+@keyframes answerPulse {
 
   0%,
   100% {
@@ -1631,28 +2268,65 @@ body.suggest-game-open {
 
   50% {
     transform:
-      scale(1.10);
+      scale(1.12);
   }
 
 }
 
 
+/* ========================================
+   MOBILE
+======================================== */
+
 @media (max-width: 540px) {
 
-  .bubble-field {
-    min-height: 420px;
+  .shape-room-scene {
+    min-height: 510px;
   }
 
 
-  .learning-bubble {
-    --size: 88px;
+  .surprise-stage {
+    top: 44%;
 
-    font-size:
-      clamp(
-        2.2rem,
-        12vw,
-        3.4rem
-      );
+    width: 220px;
+  }
+
+
+  .gift-box {
+    width: 130px;
+    height: 130px;
+  }
+
+
+  .revealed-object {
+    width: 135px;
+    height: 135px;
+  }
+
+
+  .revealed-object svg {
+    width: 125px;
+    height: 125px;
+  }
+
+
+  .revealed-object
+  .everyday-object {
+    font-size: 90px;
+  }
+
+
+  .shape-answer-area {
+    gap: 8px;
+
+    left: 8px;
+    right: 8px;
+    bottom: 20px;
+  }
+
+
+  .shape-answer-button {
+    width: 30%;
   }
 
 }
