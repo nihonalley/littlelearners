@@ -42,6 +42,17 @@ const PASTELS = [
 
 const TOTAL_ROUNDS = 8;
 
+/* ========================================
+   BACKGROUND SCENE
+======================================== */
+const learningScene =
+  document.getElementById(
+    "learningScene"
+  );
+
+LittleLearners.randomScene(
+  learningScene
+);
 
 /* --------------------------------
    ELEMENTS
@@ -230,14 +241,13 @@ function beginRound() {
 
 
   progressBar.style.width =
-    `${
-      (
-        currentRound
-        /
-        TOTAL_ROUNDS
-      )
-      *
-      100
+    `${(
+      currentRound
+      /
+      TOTAL_ROUNDS
+    )
+    *
+    100
     }%`;
 
 
@@ -336,8 +346,8 @@ function renderChoices(
 
       button.style.backgroundColor =
         roundPastels[
-          index %
-          roundPastels.length
+        index %
+        roundPastels.length
         ];
 
 

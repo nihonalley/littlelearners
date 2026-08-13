@@ -1,6 +1,18 @@
 const prompt =
     document.getElementById("prompt");
 
+/* ========================================
+BACKGROUND SCENE
+======================================== */
+const learningScene =
+    document.getElementById(
+        "learningScene"
+    );
+
+LittleLearners.randomScene(
+    learningScene
+);
+
 const OBJECTS = ["apple", "banana", "balloon", "car", "fish", "frog", "flower", "star", "duck", "ball"],
     COLORS = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "teal", "brown", "black"],
     TOTAL = 8; const $ = id => document.getElementById(id),

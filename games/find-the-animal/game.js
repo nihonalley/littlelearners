@@ -27,7 +27,17 @@ const ANIMALS = [
 
 
 const TOTAL_ROUNDS = 8;
+/* ========================================
+   BACKGROUND SCENE
+======================================== */
+const learningScene =
+  document.getElementById(
+    "learningScene"
+  );
 
+LittleLearners.randomScene(
+  learningScene
+);
 
 /* ========================================
    ELEMENTS
@@ -366,11 +376,10 @@ function renderCurrentRound() {
 
 
   progressBar.style.width =
-    `${
-      (
-        currentRound /
-        TOTAL_ROUNDS
-      ) * 100
+    `${(
+      currentRound /
+      TOTAL_ROUNDS
+    ) * 100
     }%`;
 
 

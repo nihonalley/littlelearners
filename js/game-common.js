@@ -39,11 +39,13 @@
             sound = !sound; if (!sound) stop();
             update(); if (sound) speak("Sound is on!")
         })
-    } function shuffle(a) {
+    } 
+    function shuffle(a) {
         a = [...a];
         for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]] }
         return a
-    } function random(a) { return a[Math.floor(Math.random() * a.length)] } function positive() {
+    } 
+    function random(a) { return a[Math.floor(Math.random() * a.length)] } function positive() {
         return random(["Great job!", "You got it!", "Wonderful!", "That's right!", "Yay! Great job!", "Awesome!"])
     }
     function celebrate(layer, n = 12) {
@@ -60,4 +62,37 @@
     window.LittleLearners = {
         speak, attachSoundButton: attach, shuffle, randomItem: random, positiveMessage: positive, celebrate, chooseFriendlyVoice: voice
     }
-})();
+}
+)();
+
+LittleLearners.randomScene =
+  function (element) {
+
+    if (!element) {
+      return;
+    }
+
+    const scenes = [
+      "scene-playroom",
+      "scene-playground",
+      "scene-jungle"
+    ];
+
+    scenes.forEach(
+      scene =>
+        element.classList.remove(scene)
+    );
+
+    const selected =
+      scenes[
+        Math.floor(
+          Math.random() *
+          scenes.length
+        )
+      ];
+
+    element.classList.add(
+      selected
+    );
+
+  };

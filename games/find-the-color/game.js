@@ -1,6 +1,18 @@
 const prompt =
     document.getElementById("prompt");
 
+/* ========================================
+BACKGROUND SCENE
+======================================== */
+const learningScene =
+    document.getElementById(
+        "learningScene"
+    );
+
+LittleLearners.randomScene(
+    learningScene
+);
+
 const COLORS = [
     { name: "red", value: "#F04F4F" },
     { name: "blue", value: "#4D9DE0" },
@@ -37,7 +49,7 @@ function instruction() {
 function sayInstruction() { LittleLearners.speak(instruction(), { rate: .84, pitch: 1.16 }) }
 function begin() {
     wrong = 0; locked = false;
-    feedback.textContent = ''; 
+    feedback.textContent = '';
     target = choose();
     prompt.textContent = instruction();
     roundLabel.textContent = `Round ${round} of ${TOTAL}`;
@@ -47,12 +59,12 @@ function begin() {
 function render(n) {
     choices.innerHTML = ''; const d = LittleLearners.shuffle(COLORS.filter(c => c.name !== target.name)).slice(0, n - 1);
     LittleLearners.shuffle([target, ...d]).forEach(c => {
-        const b = document.createElement('button'); 
+        const b = document.createElement('button');
         b.className = 'game-choice game-choice--color';
         if (c.name === 'white') b.classList.add('game-choice--white');
         b.style.backgroundColor = c.value; b.dataset.color = c.name;
-        b.ariaLabel = c.name; 
-        b.onclick = () => tap(b, c); 
+        b.ariaLabel = c.name;
+        b.onclick = () => tap(b, c);
         choices.appendChild(b)
     })
 }
@@ -60,10 +72,10 @@ function tap(b, c) {
     if (locked) return;
     if (c.name === target.name) {
         locked = true; document.querySelectorAll('.game-choice').forEach(x => { x.disabled = true; x.classList.remove('is-hint') });
-        b.classList.add('is-correct'); 
-        const m = LittleLearners.positiveMessage(); 
+        b.classList.add('is-correct');
+        const m = LittleLearners.positiveMessage();
         feedback.textContent = m;
-        LittleLearners.speak(m, { rate: .9, pitch: 1.18 }); 
+        LittleLearners.speak(m, { rate: .9, pitch: 1.18 });
         LittleLearners.celebrate(layer);
         setTimeout(() => round >= TOTAL ? done() : (round++, begin()), 1250)
     } else {

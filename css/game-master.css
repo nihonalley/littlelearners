@@ -2451,3 +2451,431 @@ button.learning-bubble.is-hint {
   }
 
 }
+
+/* ========================================
+   SHARED GAME ENVIRONMENTS
+======================================== */
+
+.learning-scene {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 420px;
+
+  border-radius: 24px;
+
+  border:
+    1px solid
+    rgba(190, 180, 160, 0.25);
+
+  isolation: isolate;
+}
+
+
+/* Keep game elements above decor */
+
+.learning-scene > *:not(.scene-decor) {
+  position: relative;
+  z-index: 2;
+}
+
+
+.scene-decor {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* ========================================
+   1. PLAYROOM
+======================================== */
+
+.scene-playroom {
+  background:
+    linear-gradient(
+      to bottom,
+      #fff9f1 0%,
+      #fff9f1 68%,
+      #f2dfca 68%,
+      #f2dfca 100%
+    );
+}
+
+
+.scene-playroom::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 68%;
+
+  height: 7px;
+
+  background: #d7b796;
+
+  opacity: 0.45;
+}
+
+
+.scene-playroom .decor-left {
+  position: absolute;
+
+  left: 28px;
+  top: 88px;
+
+  width: 100px;
+  height: 7px;
+
+  border-radius: 999px;
+
+  background: #caa680;
+
+  opacity: 0.38;
+}
+
+
+.scene-playroom .decor-left::before {
+  content: "🧸";
+
+  position: absolute;
+
+  left: 30px;
+  bottom: 7px;
+
+  font-size: 32px;
+
+  opacity: 0.55;
+}
+
+
+.scene-playroom .decor-right {
+  position: absolute;
+
+  right: 28px;
+  bottom: 52px;
+
+  font-size: 40px;
+
+  opacity: 0.38;
+}
+
+
+.scene-playroom .decor-right::before {
+  content: "🪴";
+}
+
+
+/* ========================================
+   2. OUTDOOR PLAYGROUND
+======================================== */
+
+.scene-playground {
+  background:
+    linear-gradient(
+      to bottom,
+      #eef9ff 0%,
+      #eef9ff 68%,
+      #e8f2d3 68%,
+      #e8f2d3 100%
+    );
+}
+
+
+.scene-playground::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 68%;
+
+  height: 5px;
+
+  background: #bdd49d;
+
+  opacity: 0.4;
+}
+
+
+.scene-playground .decor-left {
+  position: absolute;
+
+  left: 24px;
+  bottom: 50px;
+
+  width: 80px;
+  height: 42px;
+
+  border-radius:
+    40px
+    40px
+    12px
+    12px;
+
+  background: #f2c86d;
+
+  opacity: 0.34;
+}
+
+
+.scene-playground .decor-left::before {
+  content: "";
+
+  position: absolute;
+
+  width: 14px;
+  height: 70px;
+
+  left: 12px;
+  bottom: 34px;
+
+  border-radius: 10px;
+
+  background: #d8a65b;
+}
+
+
+.scene-playground .decor-right {
+  position: absolute;
+
+  right: 32px;
+  top: 36px;
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  background: #ffe58f;
+
+  opacity: 0.34;
+}
+
+
+.scene-playground .decor-right::before,
+.scene-playground .decor-right::after {
+  content: "";
+
+  position: absolute;
+
+  width: 74px;
+  height: 30px;
+
+  border-radius: 999px;
+
+  background: white;
+
+  opacity: 0.55;
+}
+
+
+.scene-playground .decor-right::before {
+  left: -110px;
+  top: 20px;
+}
+
+
+.scene-playground .decor-right::after {
+  left: -55px;
+  top: 76px;
+
+  width: 58px;
+}
+
+
+/* ========================================
+   3. JUNGLE
+======================================== */
+
+.scene-jungle {
+  background:
+    linear-gradient(
+      to bottom,
+      #f3fbef 0%,
+      #f3fbef 68%,
+      #e3eed7 68%,
+      #e3eed7 100%
+    );
+}
+
+
+.scene-jungle::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 68%;
+
+  height: 6px;
+
+  background: #a9c28e;
+
+  opacity: 0.32;
+}
+
+
+.scene-jungle .decor-left {
+  position: absolute;
+
+  left: -25px;
+  top: 30px;
+
+  width: 100px;
+  height: 160px;
+
+  border-radius:
+    50%
+    60%
+    45%
+    55%;
+
+  background: #98c68c;
+
+  transform: rotate(-14deg);
+
+  opacity: 0.23;
+}
+
+
+.scene-jungle .decor-left::before {
+  content: "";
+
+  position: absolute;
+
+  left: 56px;
+  top: 72px;
+
+  width: 92px;
+  height: 135px;
+
+  border-radius:
+    50%
+    45%
+    55%
+    50%;
+
+  background: #76b37d;
+
+  transform: rotate(19deg);
+}
+
+
+.scene-jungle .decor-right {
+  position: absolute;
+
+  right: -22px;
+  bottom: 22px;
+
+  width: 130px;
+  height: 125px;
+
+  border-radius:
+    55%
+    45%
+    50%
+    50%;
+
+  background: #7fb582;
+
+  opacity: 0.22;
+}
+
+
+.scene-jungle .decor-right::before {
+  content: "🌿";
+
+  position: absolute;
+
+  left: -45px;
+  top: -25px;
+
+  font-size: 48px;
+
+  opacity: 0.55;
+}
+
+
+/* ========================================
+   PHONE
+======================================== */
+
+@media (max-width: 540px) {
+
+  .learning-scene {
+    min-height: 440px;
+  }
+
+  .scene-playroom .decor-left,
+  .scene-playground .decor-left,
+  .scene-jungle .decor-left {
+    transform: scale(0.8);
+
+    transform-origin: left center;
+  }
+
+  .scene-playroom .decor-right,
+  .scene-playground .decor-right,
+  .scene-jungle .decor-right {
+    transform: scale(0.8);
+
+    transform-origin: right center;
+  }
+
+}
+
+/* ========================================
+   FIND THE COLOR INSIDE LEARNING SCENE
+======================================== */
+
+.learning-scene .color-choices {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap:
+    clamp(
+      22px,
+      5vw,
+      50px
+    );
+
+  padding:
+    60px
+    40px
+    100px;
+}
+
+@media (max-width: 540px) {
+
+  .learning-scene .color-choices {
+    min-height: 440px;
+
+    gap: 18px;
+
+    padding:
+      55px
+      18px
+      90px;
+  }
+
+}
