@@ -52,16 +52,16 @@ const COLORS = [
 
 
 const LETTERS = [
-  "A","B","C","D","E","F","G",
-  "H","I","J","K","L","M","N",
-  "O","P","Q","R","S","T","U",
-  "V","W","X","Y","Z"
+  "A", "B", "C", "D", "E", "F", "G",
+  "H", "I", "J", "K", "L", "M", "N",
+  "O", "P", "Q", "R", "S", "T", "U",
+  "V", "W", "X", "Y", "Z"
 ];
 
 
 const NUMBERS = [
-  "1","2","3","4","5",
-  "6","7","8","9","10"
+  "1", "2", "3", "4", "5",
+  "6", "7", "8", "9", "10"
 ];
 
 
@@ -462,11 +462,10 @@ function beginRound() {
 
 
   progressBar.style.width =
-    `${
-      (
-        currentRound /
-        TOTAL_ROUNDS
-      ) * 100
+    `${(
+      currentRound /
+      TOTAL_ROUNDS
+    ) * 100
     }%`;
 
 
@@ -604,10 +603,11 @@ function createBubble(choice) {
     );
 
 
-  bubble.style.setProperty(
-    "--size",
-    `${size}px`
-  );
+  bubble.style.width =
+    `${size}px`;
+
+  bubble.style.height =
+    `${size}px`;
 
 
   bubble.style.setProperty(
