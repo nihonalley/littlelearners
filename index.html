@@ -291,12 +291,35 @@
     </section>
     <footer class="footer">
       Made for happy little learning moments.
+      <div class="site-credits">
+        <p> Music &amp; Sound Credits </p>
+        <span> Background Music — The Green Orbs (YouTube Audio Library)</span>
+        <span> Click Sound — MatthewVakaliuk73627 (Pixabay)</span>
+      </div>
     </footer>
   </main>
 
   <script src="js/app.js"></script>
   <script src="/js/site-protection.js"></script>
   <script src="/js/suggest-game.js"></script>
+  <script src="/js/game-common.js"></script>
+  <script>
+  document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+      const soundButton =
+        document.getElementById(
+          "soundButton"
+        );
+
+      LittleLearners.attachSoundButton(
+        soundButton
+      );
+
+    }
+  );
+</script>
 </body>
 
 </html>

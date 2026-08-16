@@ -2216,7 +2216,7 @@ body.suggest-game-open {
     width: 30%;
   }
 
-  
+
 
 }
 
@@ -2250,15 +2250,12 @@ body.suggest-game-open {
   border-radius: 24px;
 
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       #eaf8ff,
-      #fff1f7
-    );
+      #fff1f7);
 
   border:
-    1px solid
-    rgba(150, 180, 200, 0.18);
+    1px solid rgba(150, 180, 200, 0.18);
 }
 
 
@@ -2280,8 +2277,7 @@ button.learning-bubble {
   min-height: 0 !important;
 
   border:
-    3px solid
-    rgba(255, 255, 255, 0.85) !important;
+    3px solid rgba(255, 255, 255, 0.85) !important;
 
   border-radius: 50% !important;
 
@@ -2289,20 +2285,16 @@ button.learning-bubble {
   -webkit-appearance: none !important;
 
   background:
-    radial-gradient(
-      circle at 30% 25%,
-      rgba(255,255,255,1) 0 7%,
-      rgba(255,255,255,0.55) 8% 15%,
+    radial-gradient(circle at 30% 25%,
+      rgba(255, 255, 255, 1) 0 7%,
+      rgba(255, 255, 255, 0.55) 8% 15%,
       var(--bubble-color, #b9dcff) 48%,
-      rgba(255,255,255,0.28) 100%
-    ) !important;
+      rgba(255, 255, 255, 0.28) 100%) !important;
 
   box-shadow:
-    inset -8px -10px 20px
-      rgba(90, 80, 130, 0.08),
+    inset -8px -10px 20px rgba(90, 80, 130, 0.08),
 
-    0 8px 20px
-      rgba(80, 80, 110, 0.12);
+    0 8px 20px rgba(80, 80, 110, 0.12);
 
   color: #263238 !important;
 
@@ -2322,11 +2314,7 @@ button.learning-bubble {
   z-index: 3;
 
   animation:
-    bubbleFloat
-    var(--bubble-speed, 3s)
-    ease-in-out
-    infinite
-    alternate;
+    bubbleFloat var(--bubble-speed, 3s) ease-in-out infinite alternate;
 }
 
 
@@ -2346,7 +2334,7 @@ button.learning-bubble::after {
   border-radius: 50%;
 
   background:
-    rgba(255,255,255,0.75);
+    rgba(255, 255, 255, 0.75);
 
   transform:
     rotate(-25deg);
@@ -2361,10 +2349,7 @@ button.learning-bubble.is-popping {
   pointer-events: none;
 
   animation:
-    bubblePop
-    240ms
-    ease-out
-    forwards;
+    bubblePop 240ms ease-out forwards;
 }
 
 
@@ -2372,17 +2357,12 @@ button.learning-bubble.is-popping {
 
 button.learning-bubble.is-hint {
   box-shadow:
-    0 0 0 9px
-      rgba(255, 214, 90, 0.32),
+    0 0 0 9px rgba(255, 214, 90, 0.32),
 
-    inset -8px -10px 20px
-      rgba(90, 80, 130, 0.08);
+    inset -8px -10px 20px rgba(90, 80, 130, 0.08);
 
   animation:
-    bubbleHint
-    800ms
-    ease-in-out
-    infinite;
+    bubbleHint 800ms ease-in-out infinite;
 }
 
 
@@ -2465,8 +2445,7 @@ button.learning-bubble.is-hint {
   border-radius: 24px;
 
   border:
-    1px solid
-    rgba(190, 180, 160, 0.25);
+    1px solid rgba(190, 180, 160, 0.25);
 
   isolation: isolate;
 }
@@ -2474,7 +2453,7 @@ button.learning-bubble.is-hint {
 
 /* Keep game elements above decor */
 
-.learning-scene > *:not(.scene-decor) {
+.learning-scene>*:not(.scene-decor) {
   position: relative;
   z-index: 2;
 }
@@ -2496,13 +2475,11 @@ button.learning-bubble.is-hint {
 
 .scene-playroom {
   background:
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       #fff9f1 0%,
       #fff9f1 68%,
       #f2dfca 68%,
-      #f2dfca 100%
-    );
+      #f2dfca 100%);
 }
 
 
@@ -2577,13 +2554,11 @@ button.learning-bubble.is-hint {
 
 .scene-playground {
   background:
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       #eef9ff 0%,
       #eef9ff 68%,
       #e8f2d3 68%,
-      #e8f2d3 100%
-    );
+      #e8f2d3 100%);
 }
 
 
@@ -2614,10 +2589,7 @@ button.learning-bubble.is-hint {
   height: 42px;
 
   border-radius:
-    40px
-    40px
-    12px
-    12px;
+    40px 40px 12px 12px;
 
   background: #f2c86d;
 
@@ -2696,13 +2668,11 @@ button.learning-bubble.is-hint {
 
 .scene-jungle {
   background:
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       #f3fbef 0%,
       #f3fbef 68%,
       #e3eed7 68%,
-      #e3eed7 100%
-    );
+      #e3eed7 100%);
 }
 
 
@@ -2733,10 +2703,7 @@ button.learning-bubble.is-hint {
   height: 160px;
 
   border-radius:
-    50%
-    60%
-    45%
-    55%;
+    50% 60% 45% 55%;
 
   background: #98c68c;
 
@@ -2758,10 +2725,7 @@ button.learning-bubble.is-hint {
   height: 135px;
 
   border-radius:
-    50%
-    45%
-    55%
-    50%;
+    50% 45% 55% 50%;
 
   background: #76b37d;
 
@@ -2779,10 +2743,7 @@ button.learning-bubble.is-hint {
   height: 125px;
 
   border-radius:
-    55%
-    45%
-    50%
-    50%;
+    55% 45% 50% 50%;
 
   background: #7fb582;
 
@@ -2853,16 +2814,12 @@ button.learning-bubble.is-hint {
   flex-wrap: wrap;
 
   gap:
-    clamp(
-      22px,
+    clamp(22px,
       5vw,
-      50px
-    );
+      50px);
 
   padding:
-    60px
-    40px
-    100px;
+    60px 40px 100px;
 }
 
 @media (max-width: 540px) {
@@ -2873,9 +2830,7 @@ button.learning-bubble.is-hint {
     gap: 18px;
 
     padding:
-      55px
-      18px
-      90px;
+      55px 18px 90px;
   }
 
 }
@@ -2902,9 +2857,7 @@ button.learning-bubble.is-hint {
   text-align: center;
 
   margin:
-    4px
-    0
-    6px;
+    4px 0 6px;
 }
 
 
@@ -2912,11 +2865,9 @@ button.learning-bubble.is-hint {
   color: #273238;
 
   font-size:
-    clamp(
-      4.5rem,
+    clamp(4.5rem,
       12vw,
-      7rem
-    );
+      7rem);
 
   font-weight: 900;
 
@@ -2949,24 +2900,19 @@ button.learning-bubble.is-hint {
   overflow: hidden;
 
   margin:
-    8px
-    0
-    22px;
+    8px 0 22px;
 
   border:
-    1px solid
-    rgba(150, 180, 150, 0.2);
+    1px solid rgba(150, 180, 150, 0.2);
 
   border-radius: 26px;
 
   background:
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       #eef9ff 0%,
       #eef9ff 64%,
       #dfeecb 64%,
-      #dfeecb 100%
-    );
+      #dfeecb 100%);
 
   isolation: isolate;
 }
@@ -3016,10 +2962,7 @@ button.learning-bubble.is-hint {
   left: 0;
 
   border-radius:
-    0
-    40px
-    0
-    0;
+    0 40px 0 0;
 }
 
 
@@ -3027,10 +2970,7 @@ button.learning-bubble.is-hint {
   right: 0;
 
   border-radius:
-    40px
-    0
-    0
-    0;
+    40px 0 0 0;
 }
 
 
@@ -3061,17 +3001,12 @@ button.learning-bubble.is-hint {
   height: 30px;
 
   border-radius:
-    45%
-    45%
-    12px
-    12px;
+    45% 45% 12px 12px;
 
   background:
-    repeating-linear-gradient(
-      to right,
+    repeating-linear-gradient(to right,
       #c8945d 0 34px,
-      #b77d4b 34px 38px
-    );
+      #b77d4b 34px 38px);
 
   transform:
     rotate(0deg);
@@ -3090,14 +3025,10 @@ button.learning-bubble.is-hint {
   height: 80px;
 
   border-radius:
-    50%
-    50%
-    0
-    0;
+    50% 50% 0 0;
 
   border-top:
-    8px solid
-    #a96f46;
+    8px solid #a96f46;
 
   pointer-events: none;
 }
@@ -3170,12 +3101,10 @@ button.learning-bubble.is-hint {
   border-radius: 50%;
 
   background:
-    rgba(
+    rgba(255,
       255,
       255,
-      255,
-      0.58
-    );
+      0.58);
 
   cursor: pointer;
 
@@ -3184,8 +3113,7 @@ button.learning-bubble.is-hint {
   line-height: 1;
 
   transition:
-    transform
-    150ms ease;
+    transform 150ms ease;
 }
 
 
@@ -3230,15 +3158,10 @@ button.learning-bubble.is-hint {
   pointer-events: none;
 
   animation:
-    crossTheBridge
-    1.4s
-    cubic-bezier(
-      0.35,
+    crossTheBridge 1.4s cubic-bezier(0.35,
       0,
       0.2,
-      1
-    )
-    forwards;
+      1) forwards;
 }
 
 
@@ -3253,8 +3176,7 @@ button.learning-bubble.is-hint {
     bottom: 145px;
 
     transform:
-      rotate(0deg)
-      scale(1);
+      rotate(0deg) scale(1);
   }
 
 
@@ -3262,8 +3184,7 @@ button.learning-bubble.is-hint {
     bottom: 175px;
 
     transform:
-      rotate(-8deg)
-      scale(1.05);
+      rotate(-8deg) scale(1.05);
   }
 
 
@@ -3272,8 +3193,7 @@ button.learning-bubble.is-hint {
     bottom: 205px;
 
     transform:
-      rotate(4deg)
-      scale(1.08);
+      rotate(4deg) scale(1.08);
   }
 
 
@@ -3282,8 +3202,7 @@ button.learning-bubble.is-hint {
     bottom: 175px;
 
     transform:
-      rotate(-4deg)
-      scale(1.03);
+      rotate(-4deg) scale(1.03);
   }
 
 
@@ -3292,8 +3211,7 @@ button.learning-bubble.is-hint {
     bottom: 135px;
 
     transform:
-      rotate(0deg)
-      scale(0.95);
+      rotate(0deg) scale(0.95);
   }
 
 }
@@ -3382,9 +3300,7 @@ button.learning-bubble.is-hint {
   font-size: 34px;
 
   animation:
-    crossedArrival
-    350ms
-    ease-out;
+    crossedArrival 350ms ease-out;
 }
 
 
@@ -3394,8 +3310,7 @@ button.learning-bubble.is-hint {
     opacity: 0;
 
     transform:
-      translateY(-12px)
-      scale(0.7);
+      translateY(-12px) scale(0.7);
   }
 
 
@@ -3403,8 +3318,7 @@ button.learning-bubble.is-hint {
     opacity: 1;
 
     transform:
-      translateY(0)
-      scale(1);
+      translateY(0) scale(1);
   }
 
 }
@@ -3477,50 +3391,160 @@ button.learning-bubble.is-hint {
 
     0% {
       transform:
-        translate(
-          0,
-          0
-        )
-        scale(1);
+        translate(0,
+          0) scale(1);
     }
 
 
     25% {
       transform:
-        translate(
-          55px,
-          -18px
-        );
+        translate(55px,
+          -18px);
     }
 
 
     55% {
       transform:
-        translate(
-          125px,
-          -45px
-        );
+        translate(125px,
+          -45px);
     }
 
 
     80% {
       transform:
-        translate(
-          190px,
-          -22px
-        );
+        translate(190px,
+          -22px);
     }
 
 
     100% {
       transform:
-        translate(
-          240px,
-          10px
-        )
-        scale(0.9);
+        translate(240px,
+          10px) scale(0.9);
     }
 
+  }
+
+}
+
+/* ========================================
+   SOUND MIXER
+======================================== */
+
+.sound-mixer {
+  position: fixed;
+
+  top: 82px;
+  right: 18px;
+
+  z-index: 1500;
+
+  width: 220px;
+
+  display: none;
+
+  padding: 14px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,
+      255,
+      255,
+      0.98);
+
+  box-shadow:
+    0 14px 36px rgba(50,
+      45,
+      35,
+      0.15);
+}
+
+
+.sound-mixer.is-open {
+  display: block;
+}
+
+
+.sound-mixer-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  min-height: 42px;
+}
+
+
+.sound-mixer-label {
+  font-size: 0.86rem;
+
+  font-weight: 700;
+}
+
+
+.sound-toggle {
+  min-width: 48px;
+
+  min-height: 34px;
+
+  padding:
+    6px 10px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 999px;
+
+  background:
+    #fff8df;
+
+  color:
+    var(--text);
+
+  font-family:
+    "Fredoka",
+    sans-serif;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.sound-toggle-icon {
+  font-size: 17px;
+}
+
+
+.sound-volume-row {
+  padding:
+    6px 2px 3px;
+}
+
+
+.sound-volume-slider {
+  width: 100%;
+
+  cursor: pointer;
+
+  accent-color:
+    var(--yellow);
+}
+
+
+@media (max-width: 540px) {
+
+  .sound-mixer {
+    top: 68px;
+    right: 10px;
+
+    width: 205px;
   }
 
 }
