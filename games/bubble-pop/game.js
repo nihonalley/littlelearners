@@ -575,6 +575,21 @@ function renderBubbles(count) {
   );
 }
 
+/* ========================================
+   RANDOM NUMBER HELPER
+======================================== */
+
+function randomNumber(
+  min,
+  max
+) {
+  return (
+    Math.random() *
+    (max - min)
+    +
+    min
+  );
+}
 
 /* ========================================
    CREATE BUBBLE
@@ -598,8 +613,8 @@ function createBubble(choice) {
 
   const size =
     randomNumber(
-      88,
-      118
+      82,
+      105
     );
 
 
@@ -618,6 +633,8 @@ function createBubble(choice) {
     )}s`
   );
 
+
+  /* COLOR MODE */
 
   if (
     gameMode === "colors"
@@ -638,7 +655,12 @@ function createBubble(choice) {
       `${choice.name} bubble`
     );
 
-  } else {
+  }
+
+
+  /* LETTER / NUMBER MODE */
+
+  else {
 
     bubble.style.setProperty(
       "--bubble-color",
@@ -664,6 +686,16 @@ function createBubble(choice) {
   }
 
 
+  /*
+    Add the bubble to the field first.
+    Then we can calculate its position.
+  */
+
+  bubbleField.appendChild(
+    bubble
+  );
+
+
   positionBubble(
     bubble,
     size
@@ -682,76 +714,231 @@ function createBubble(choice) {
     }
   );
 
-
-  bubbleField.appendChild(
-    bubble
-  );
 }
 
 
 /* ========================================
-   POSITIONING
+   POSITION BUBBLE
 ======================================== */
-
-function randomNumber(
-  min,
-  max
-) {
-
-  return (
-    Math.random()
-    *
-    (max - min)
-    +
-    min
-  );
-}
-
 
 function positionBubble(
   bubble,
   size
 ) {
 
-  const width =
+  const fieldWidth =
     bubbleField.clientWidth;
 
-  const height =
+  const fieldHeight =
     bubbleField.clientHeight;
+
+
+  const padding =
+    14;
+
+
+  const bubbleGap =
+    12;
 
 
   const maxX =
     Math.max(
-      10,
-      width -
+      padding,
+      fieldWidth -
       size -
-      10
+      padding
     );
 
 
   const maxY =
     Math.max(
-      10,
-      height -
+      padding,
+      fieldHeight -
       size -
-      10
+      padding
     );
 
 
+  /*
+    Get bubbles already placed,
+    excluding the new bubble.
+  */
+
+  const existingBubbles =
+    Array.from(
+      bubbleField.querySelectorAll(
+        ".learning-bubble"
+      )
+    ).filter(
+      existing =>
+        existing !== bubble
+    );
+
+
+  let bestPosition =
+    null;
+
+
+  /*
+    Try to find an empty spot.
+  */
+
+  for (
+    let attempt = 0;
+    attempt < 100;
+    attempt++
+  ) {
+
+    const x =
+      randomNumber(
+        padding,
+        maxX
+      );
+
+
+    const y =
+      randomNumber(
+        padding,
+        maxY
+      );
+
+
+    let overlaps =
+      false;
+
+
+    for (
+      const existing
+      of existingBubbles
+    ) {
+
+      const existingX =
+        parseFloat(
+          existing.style.left
+        ) || 0;
+
+
+      const existingY =
+        parseFloat(
+          existing.style.top
+        ) || 0;
+
+
+      const existingSize =
+        parseFloat(
+          existing.style.width
+        ) || 90;
+
+
+      const centerX1 =
+        x +
+        size / 2;
+
+
+      const centerY1 =
+        y +
+        size / 2;
+
+
+      const centerX2 =
+        existingX +
+        existingSize / 2;
+
+
+      const centerY2 =
+        existingY +
+        existingSize / 2;
+
+
+      const dx =
+        centerX1 -
+        centerX2;
+
+
+      const dy =
+        centerY1 -
+        centerY2;
+
+
+      const distance =
+        Math.sqrt(
+          dx * dx +
+          dy * dy
+        );
+
+
+      const minimumDistance =
+        size / 2 +
+        existingSize / 2 +
+        bubbleGap;
+
+
+      if (
+        distance <
+        minimumDistance
+      ) {
+
+        overlaps =
+          true;
+
+        break;
+
+      }
+
+    }
+
+
+    if (
+      !overlaps
+    ) {
+
+      bestPosition = {
+        x,
+        y
+      };
+
+      break;
+
+    }
+
+  }
+
+
+  /*
+    Fallback if the screen is crowded.
+  */
+
+  if (
+    !bestPosition
+  ) {
+
+    bestPosition = {
+
+      x:
+        randomNumber(
+          padding,
+          maxX
+        ),
+
+      y:
+        randomNumber(
+          padding,
+          maxY
+        )
+
+    };
+
+  }
+
+
   bubble.style.left =
-    `${randomNumber(
-      10,
-      maxX
-    )}px`;
+    `${bestPosition.x}px`;
 
 
   bubble.style.top =
-    `${randomNumber(
-      15,
-      maxY
-    )}px`;
-}
+    `${bestPosition.y}px`;
 
+}
 
 /* ========================================
    ANSWER CHECK

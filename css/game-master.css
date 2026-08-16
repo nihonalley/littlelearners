@@ -2392,12 +2392,12 @@ button.learning-bubble.is-hint {
 
   from {
     transform:
-      translate(-5px, 5px);
+      translate(-3px, 3px);
   }
 
   to {
     transform:
-      translate(7px, -18px);
+      translate(4px, -10px);
   }
 
 }
