@@ -331,7 +331,8 @@ const MASTER_GAMES = [
     "find-the-letter",
     "find-the-animal",
     "bubble-pop",
-    "find-the-shape"
+    "find-the-shape",
+    "count-and-cross"
 ];
 
 

@@ -1049,3 +1049,12 @@ body.suggest-game-open {
 .icon-bubble {
   background: #e8f7ff;
 }
+
+.icon-count-cross {
+  background:
+    linear-gradient(
+      135deg,
+      #e8f6ff,
+      #e9f4d8
+    );
+}

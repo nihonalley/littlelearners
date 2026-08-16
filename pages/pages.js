@@ -194,6 +194,39 @@ const pages = {
             "Early geometry"
         ]
 
+    },
+
+    "count-and-cross": {
+
+        gameTitle:
+            "Count & Cross",
+
+        icon:
+            "🌉",
+
+        ageRange:
+            "Ages 2–4",
+
+        seoTitle:
+            "Counting Game for Toddlers | Little Learners",
+
+        seoDescription:
+            "A free interactive counting game for toddlers and preschoolers. Count animals as they cross a bridge and practice numbers from 1 to 10.",
+
+        parentHeading:
+            "Interactive Counting Game for Toddlers",
+
+        parentDescription:
+            "Count & Cross helps toddlers practice early counting by tapping animals and watching them cross a bridge one at a time. Each tap is counted aloud while a large number updates on screen, helping children connect spoken numbers with quantity and visual counting.",
+
+        skills: [
+            "Counting 1–10",
+            "Number recognition",
+            "One-to-one correspondence",
+            "Listening skills",
+            "Fine motor coordination"
+        ]
+
     }
 
 };

@@ -1,0 +1,228 @@
+<!-- START SCREEN -->
+
+<section
+  id="startScreen"
+  class="game-screen game-center-screen"
+>
+  <div
+    class="game-start-icon"
+    aria-hidden="true"
+  >
+    🌉
+  </div>
+
+  <h2>Count & Cross</h2>
+
+  <p>
+    Help the animals cross while you count!
+  </p>
+
+
+  <div class="count-settings">
+
+    <p class="shape-settings-label">
+      Difficulty
+    </p>
+
+    <div class="game-mode-selector">
+
+      <button
+        id="easyButton"
+        class="game-mode-button is-active"
+        type="button"
+      >
+        🌱 Easy 1–3
+      </button>
+
+      <button
+        id="normalButton"
+        class="game-mode-button"
+        type="button"
+      >
+        ⭐ Normal 1–5
+      </button>
+
+      <button
+        id="challengeButton"
+        class="game-mode-button"
+        type="button"
+      >
+        🚀 Challenge 1–10
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <button
+    id="startButton"
+    class="game-primary-button"
+    type="button"
+  >
+    Start Game
+  </button>
+</section>
+
+
+<!-- PLAY SCREEN -->
+
+<section
+  id="playScreen"
+  class="game-screen game-play-screen is-hidden"
+>
+
+  <div class="game-meta">
+
+    <span
+      id="roundLabel"
+      class="game-round-label"
+    >
+      Round 1 of 8
+    </span>
+
+    <button
+      id="repeatButton"
+      class="game-repeat-button"
+      type="button"
+    >
+      🔊 Hear Again
+    </button>
+
+  </div>
+
+
+  <h2
+    id="prompt"
+    class="game-prompt count-cross-prompt"
+  ></h2>
+
+
+  <div class="count-display-wrap">
+
+    <div
+      id="countDisplay"
+      class="count-display"
+    >
+      0
+    </div>
+
+    <div
+      id="countCaption"
+      class="count-caption"
+    >
+      crossed
+    </div>
+
+  </div>
+
+
+  <div
+    id="feedback"
+    class="game-feedback"
+    aria-live="polite"
+  ></div>
+
+
+  <div
+    id="crossScene"
+    class="cross-scene"
+  >
+
+    <div
+      class="cross-scene-sun"
+      aria-hidden="true"
+    ></div>
+
+
+    <div
+      class="cross-start-land"
+      aria-hidden="true"
+    ></div>
+
+
+    <div
+      class="cross-finish-land"
+      aria-hidden="true"
+    ></div>
+
+
+    <div
+      class="bridge"
+      aria-hidden="true"
+    >
+      <div class="bridge-deck"></div>
+      <div class="bridge-rail bridge-rail-left"></div>
+      <div class="bridge-rail bridge-rail-right"></div>
+    </div>
+
+
+    <div
+      id="characterArea"
+      class="character-area"
+      aria-label="Characters to count"
+    ></div>
+
+
+    <div
+      id="finishArea"
+      class="finish-area"
+      aria-label="Characters that crossed"
+    ></div>
+
+  </div>
+
+
+  <div class="game-progress-track">
+
+    <div
+      id="progressBar"
+      class="game-progress-bar"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- FINISH SCREEN -->
+
+<section
+  id="finishScreen"
+  class="game-screen game-center-screen is-hidden"
+>
+
+  <div
+    class="game-finish-icon"
+    aria-hidden="true"
+  >
+    ⭐
+  </div>
+
+  <h2>All done!</h2>
+
+  <p>
+    Great job counting!
+  </p>
+
+
+  <div class="game-finish-actions">
+
+    <button
+      id="playAgainButton"
+      class="game-primary-button"
+      type="button"
+    >
+      Play Again
+    </button>
+
+    <a
+      href="/"
+      class="game-secondary-button"
+    >
+      Home
+    </a>
+
+  </div>
+
+</section>

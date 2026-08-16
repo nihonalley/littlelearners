@@ -43,6 +43,12 @@
       title: "Find the Shape",
       icon: "🎁",
       url: "/games/find-the-shape/"
+    },
+    {
+      slug: "count-and-cross",
+      title: "Count & Cross",
+      icon: "🌉",
+      url: "/games/count-and-cross/"
     }
   ];
 
